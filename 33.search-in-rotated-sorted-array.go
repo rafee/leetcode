@@ -43,7 +43,7 @@
 package leetcode
 
 // @lc code=start
-func search(nums []int, target int) int {
+func searchRotated(nums []int, target int) int {
 	numLen := len(nums)
 	if numLen == 0 {
 		return -1

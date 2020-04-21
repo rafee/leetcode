@@ -42,9 +42,11 @@
 
 package leetcode
 
-import "testing"
+import (
+	"testing"
+)
 
-func Test_search(t *testing.T) {
+func Test_searchRotated(t *testing.T) {
 	type args struct {
 		nums   []int
 		target int
@@ -54,21 +56,22 @@ func Test_search(t *testing.T) {
 		args args
 		want int
 	}{
+		// TODO: Add test cases.
 		{
 			name: "Test 1",
-			args: args{[]int{4,5,6,7,0,1,2},0},
+			args: args{[]int{4, 5, 6, 7, 0, 1, 2}, 0},
 			want: 4,
 		},
 		{
 			name: "Test 2",
-			args: args{[]int{4,5,6,7,0,1,2},3},
+			args: args{[]int{4, 5, 6, 7, 0, 1, 2}, 3},
 			want: -1,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := search(tt.args.nums, tt.args.target); got != tt.want {
-				t.Errorf("search() = %v, want %v", got, tt.want)
+			if got := searchRotated(tt.args.nums, tt.args.target); got != tt.want {
+				t.Errorf("searchRotated() = %v, want %v", got, tt.want)
 			}
 		})
 	}
