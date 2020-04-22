@@ -142,3 +142,46 @@ func Test_removeQueenStr(t *testing.T) {
 		})
 	}
 }
+
+func Test_makeByteBoard(t *testing.T) {
+	type args struct {
+		n int
+	}
+	tests := []struct {
+		name string
+		args args
+		want [][]byte
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := makeByteBoard(tt.args.n); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("makeByteBoard() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_isSafeStr(t *testing.T) {
+	type args struct {
+		board [][]byte
+		n     int
+		row   int
+		col   int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := isSafeStr(tt.args.board, tt.args.n, tt.args.row, tt.args.col); got != tt.want {
+				t.Errorf("isSafeStr() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
