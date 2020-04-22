@@ -36,45 +36,51 @@
 
 package leetcode
 
+import "fmt"
+
 // @lc code=start
 func searchRange(nums []int, target int) []int {
-	rng := bSearch(nums, target)
-	if rng[0] == -1 {
-		return rng
-	}
-
-	return findRange(nums, rng, target)
-}
-
-func bSearch(nums []int, target int) []int {
-	length := len(nums)
-	if length == 0 {
+	index := findNum(nums, target)
+	if index == -1 {
 		return []int{-1, -1}
 	}
 
-	for left, right := 0, length-1; left <= right; {
-		mid := (left + right) / 2
-		if nums[mid] == target {
-			return []int{left, right}
-		} else if nums[mid] > target {
-			right = mid - 1
+	startLeft, endLeft, startRight, endRight := 0, index, index, len(nums)-1
+	for startLeft < endLeft {
+		mid := (startLeft + endLeft) / 2
+		fmt.Println(startLeft, mid, endLeft)
+		if nums[mid] == nums[endLeft] {
+			endLeft = mid
 		} else {
-			left = mid + 1
+			startLeft = mid + 1
 		}
 	}
-	return []int{-1, -1}
+
+	for startRight < endRight {
+		mid := (startRight + endRight) / 2
+		if nums[mid] == nums[startRight] {
+			startRight = mid
+		} else {
+			endRight = mid - 1
+		}
+	}
+
+	return []int{startLeft, endRight}
 }
 
-func findRange(nums, limits []int, target int) []int {
-	// left, right := limits[0], limits[1]
-	// mid := (left + right) / 2
-
-	// for midL, midR := (left+mid)/2, (mid+right)/2; ; {
-	// 	if midL == target {
-	// 		left = midL
-	// 	}
-	// }
-	return limits
+func findNum(nums []int, target int) int {
+	start, end := 0, len(nums)-1
+	for start <= end {
+		mid := (start + end) / 2
+		if nums[mid] == target {
+			return mid
+		} else if nums[mid] < target {
+			start = mid + 1
+		} else {
+			end = mid - 1
+		}
+	}
+	return -1
 }
 
 // @lc code=end

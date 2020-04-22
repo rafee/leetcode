@@ -49,21 +49,32 @@ package leetcode
 
 // @lc code=start
 func solveNQueens(n int) [][]string {
-	board := makeBoard(n)
+	board := makeByteBoard(n)
 	return solveNQueensStr(board, n, 0, []string{})
 }
 
-func solveNQueensStr(board [][]bool, n, row int, solution []string) [][]string {
+func makeByteBoard(n int) [][]byte {
+	board := make([][]byte, n)
+	for i := 0; i < n; i++ {
+		board[i] = make([]byte, n)
+		for j := 0; j < n; j++ {
+			board[i][j] = '.'
+		}
+	}
+	return board
+}
+
+func solveNQueensStr(board [][]byte, n, row int, solution []string) [][]string {
 	result := make([][]string, 0)
 	for col := 0; col < n; col++ {
-		if isSafe(board, n, row, col) {
+		if isSafeStr(board, n, row, col) {
 			sol := placeQueenStr(board, n, row, col)
 			tmp := append(solution, sol)
-			if row == (n - 1) {
-				result = append(result, tmp)
-			} else {
+			if row != (n - 1) {
 				res := solveNQueensStr(board, n, row+1, tmp)
 				result = append(result, res...)
+			} else {
+				result = append(result, tmp)
 			}
 			removeQueenStr(board, n, row, col)
 		}
@@ -71,23 +82,36 @@ func solveNQueensStr(board [][]bool, n, row int, solution []string) [][]string {
 	return result
 }
 
-func placeQueenStr(board [][]bool, n, row, col int) string {
-	board[row][col] = true
-
-	bBuf := make([]byte, n)
-	for i := 0; i < n; i++ {
-		if i != col {
-			bBuf[i] = '.'
-		} else {
-			bBuf[i] = 'Q'
+func isSafeStr(board [][]byte, n, row, col int) bool {
+	for i := 0; i < row; i++ {
+		if board[i][col] == 'Q' {
+			return false
 		}
 	}
 
-	return string(bBuf)
+	// left diagonal
+	for i, j := row-1, col-1; i >= 0 && j >= 0; i, j = i-1, j-1 {
+		if board[i][j] == 'Q' {
+			return false
+		}
+	}
+
+	// right diagonal
+	for i, j := row-1, col+1; i >= 0 && j < n; i, j = i-1, j+1 {
+		if board[i][j] == 'Q' {
+			return false
+		}
+	}
+	return true
 }
 
-func removeQueenStr(board [][]bool, n, row, col int) {
-	board[row][col] = false
+func placeQueenStr(board [][]byte, n, row, col int) string {
+	board[row][col] = 'Q'
+	return string(board[row])
+}
+
+func removeQueenStr(board [][]byte, n, row, col int) {
+	board[row][col] = '.'
 }
 
 // @lc code=end

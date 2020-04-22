@@ -83,14 +83,14 @@ func isSafe(board [][]bool, n, row, col int) bool {
 	}
 
 	// left diagonal
-	for i, j := row, col; i >= 0 && j >= 0; i, j = i-1, j-1 {
+	for i, j := row-1, col-1; i >= 0 && j >= 0; i, j = i-1, j-1 {
 		if board[i][j] {
 			return false
 		}
 	}
 
 	// right diagonal
-	for i, j := row, col; i >= 0 && j < n; i, j = i-1, j+1 {
+	for i, j := row-1, col+1; i >= 0 && j < n; i, j = i-1, j+1 {
 		if board[i][j] {
 			return false
 		}
