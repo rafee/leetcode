@@ -56,8 +56,33 @@ func Test_numIslands(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{[][]byte{}},
+			want: 0,
+		},
+		{
+			name: "Test 2",
+			args: args{[][]byte{
+				{'1', '1', '1', '1', '0'},
+				{'1', '1', '0', '1', '0'},
+				{'1', '1', '0', '0', '0'},
+				{'0', '0', '0', '0', '0'},
+			}},
+			want: 1,
+		},
+		{
+			name: "Test 3",
+			args: args{[][]byte{
+				{'1', '1', '0', '0', '0'},
+				{'1', '1', '0', '0', '0'},
+				{'0', '0', '1', '0', '0'},
+				{'0', '0', '0', '1', '1'},
+			}},
+			want: 3,
+		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := numIslands(tt.args.grid); got != tt.want {

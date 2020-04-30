@@ -51,7 +51,11 @@ func Test_groupAnagrams(t *testing.T) {
 		args args
 		want [][]string
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{[]string{"eat", "tea", "tan", "ate", "nat", "bat"}},
+			want: [][]string{{"ate", "eat", "tea"}, {"nat", "tan"}, {"bat"}},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

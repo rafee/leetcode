@@ -54,7 +54,22 @@ func Test_reversePairs(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{[]int{1, 3, 2, 3, 1}},
+			want: 2,
+		},
+		{
+			name: "Test 2",
+			args: args{[]int{2, 4, 3, 5, 1}},
+			want: 3,
+		},
+		{
+			name: "Test 3",
+			args: args{[]int{2147483647, 2147483647, -2147483647, -2147483647, -2147483647,
+				2147483647}},
+			want: 9,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

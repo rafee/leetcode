@@ -47,7 +47,21 @@ func Test_isHappy(t *testing.T) {
 		args args
 		want bool
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{1},
+			want: true,
+		},
+		{
+			name: "Test 2",
+			args: args{19},
+			want: true,
+		},
+		{
+			name: "Test 3",
+			args: args{20},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

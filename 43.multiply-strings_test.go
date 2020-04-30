@@ -56,7 +56,16 @@ func Test_multiply(t *testing.T) {
 		args args
 		want string
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{"0", "3"},
+			want: "0",
+		},
+		{
+			name: "Test 2",
+			args: args{"123", "456"},
+			want: "56088",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
