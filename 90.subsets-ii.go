@@ -38,7 +38,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -49,25 +48,19 @@ func subsetsWithDup(nums []int) [][]int {
 }
 
 func genSubsets(nums []int) [][]int {
-	solution := [][]int{{}}
 	numLen := len(nums)
 	if numLen == 0 {
-		return solution
+		return [][]int{{}}
 	}
 
 	dups, nums := genDup(nums)
-	if len(nums) == 0 {
-		solution = append(solution, dups...)
-		fmt.Println(solution)
-		return solution
-	}
-	for i := range nums {
-		tmp := genSubsets(nums[i:])
-		for _, sol := range tmp {
-			for _, dup := range dups {
-				sol = append(sol, dup...)
-				solution = append(solution, sol)
-			}
+	solution := [][]int{}
+	res := genSubsets(nums)
+	solution = append(solution, res...)
+	for _, dup := range dups {
+		for _, set := range res {
+			tmp := append(dup, set...)
+			solution = append(solution, tmp)
 		}
 	}
 	return solution
@@ -80,8 +73,8 @@ func genDup(nums []int) ([][]int, []int) {
 		if nums[i] != nums[0] {
 			return dups, nums[i:]
 		}
-		tmp := []int{}
-		for j := 0; j <= i; j++ {
+		tmp := []int{nums[0]}
+		for j := 0; j < i; j++ {
 			tmp = append(tmp, nums[0])
 		}
 		dups = append(dups, tmp)
