@@ -72,7 +72,7 @@ func Test_combinationSum2(t *testing.T) {
 		{
 			name: "Test 1",
 			args: args{[]int{10, 1, 2, 7, 6, 1, 5}, 8},
-			want: [][]int{{1, 1, 6}, {1, 2, 5}, {1, 7}, {2, 6}},
+			want: [][]int{{6, 1, 1}, {5, 2, 1}, {7, 1}, {6, 2}},
 		},
 	}
 	for _, tt := range tests {
