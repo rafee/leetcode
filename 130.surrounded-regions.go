@@ -56,36 +56,43 @@ func solve(board [][]byte) {
 		return
 	}
 	nY := len(board[0])
-	visited := make([][]bool, nX)
-	for x := 0; x < nX; x++ {
-		visited[x] = make([]bool, nY)
+	for i := 0; i < nX; i++ {
+		if board[i][0] == 'O' {
+			visit(board, i, 0, nX, nY)
+		}
+		if board[i][nY-1] == 'O' {
+			visit(board, i, nY-1, nX, nY)
+		}
 	}
-	for x := 0; x < nX; x++ {
-		for y := 0; y < nY; y++ {
-			if !visited[x][y] {
-				if board[x][y] == 'X' {
-					visited[x][y] = true
-				} else {
-					visit(board, visited, x, y, nX, nY)
-					visited[x][y] = true
-				}
+	for j := 1; j < nY-1; j++ {
+		if board[0][j] == 'O' {
+			visit(board, 0, j, nX, nY)
+		}
+		if board[nX-1][j] == 'O' {
+			visit(board, nX-1, j, nX, nY)
+		}
+	}
+	for i := 0; i < nX; i++ {
+		for j := 0; j < nY; j++ {
+			if board[i][j] == '*' {
+				board[i][j] = 'O'
+			} else if board[i][j] == 'O' {
+				board[i][j] = 'X'
 			}
 		}
 	}
 }
 
-func visit(board [][]byte, visited [][]bool, x, y, nX, nY int) {
-	if visited[x][y] || x == 0 || x == nX-1 || y == 0 || y == nY-1 {
-		visited[x][y] = true
+func visit(board [][]byte, x, y, X, Y int) {
+	if x < 0 || x > X-1 || y < 0 || y > Y-1 || board[x][y] != 'O' {
 		return
 	}
 
-	visit(board, visited, x+1, y, nX, nY)
-	visit(board, visited, x, y+1, nX, nY)
-	if board[x-1][y] != 'O' && board[x+1][y] != 'O' && board[x][y-1] != 'O' && board[x][y+1] != 'O' {
-		board[x][y] = 'X'
-	}
-	visited[x][y] = true
+	board[x][y] = '*'
+	visit(board, x-1, y, X, Y)
+	visit(board, x+1, y, X, Y)
+	visit(board, x, y-1, X, Y)
+	visit(board, x, y+1, X, Y)
 }
 
 // @lc code=end

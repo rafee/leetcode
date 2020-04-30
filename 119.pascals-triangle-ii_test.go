@@ -54,7 +54,7 @@ func Test_getRow(t *testing.T) {
 		{
 			name: "Test 1",
 			args: args{3},
-			want: []int{1, 3, 3, 2},
+			want: []int{1, 3, 3, 1},
 		},
 	}
 	for _, tt := range tests {

@@ -93,6 +93,38 @@ func Test_solve(t *testing.T) {
 				{'X', 'O', 'X', 'X'},
 			},
 		},
+		{
+			name: "Test 3",
+			args: args{
+				[][]byte{
+					{'X', 'X', 'X'},
+					{'X', 'O', 'X'},
+					{'X', 'X', 'X'},
+				},
+			},
+			want: [][]byte{
+				{'X', 'X', 'X'},
+				{'X', 'X', 'X'},
+				{'X', 'X', 'X'},
+			},
+		},
+		{
+			name: "Test 4",
+			args: args{
+				[][]byte{
+					{'X', 'X', 'X', 'X'},
+					{'X', 'O', 'O', 'X'},
+					{'X', 'O', 'O', 'X'},
+					{'X', 'O', 'X', 'X'},
+				},
+			},
+			want: [][]byte{
+				{'X', 'X', 'X', 'X'},
+				{'X', 'O', 'O', 'X'},
+				{'X', 'O', 'O', 'X'},
+				{'X', 'O', 'X', 'X'},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -100,28 +132,6 @@ func Test_solve(t *testing.T) {
 			if !reflect.DeepEqual(tt.args.board, tt.want) {
 				t.Errorf("solve(%v)", tt.args.board)
 			}
-		})
-	}
-}
-
-func Test_visit(t *testing.T) {
-	type args struct {
-		board   [][]byte
-		visited [][]bool
-		x       int
-		y       int
-		nX      int
-		nY      int
-	}
-	tests := []struct {
-		name string
-		args args
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			visit(tt.args.board, tt.args.visited, tt.args.x, tt.args.y, tt.args.nX, tt.args.nY)
 		})
 	}
 }
