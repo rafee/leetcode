@@ -62,3 +62,24 @@ func Test_generateParenthesis(t *testing.T) {
 		})
 	}
 }
+
+func Test_generate(t *testing.T) {
+	type args struct {
+		result *[]string
+		str    []byte
+		open   int
+		close  int
+		max    int
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			generate(tt.args.result, tt.args.str, tt.args.open, tt.args.close, tt.args.max)
+		})
+	}
+}

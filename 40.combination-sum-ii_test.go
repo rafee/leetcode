@@ -83,3 +83,24 @@ func Test_combinationSum2(t *testing.T) {
 		})
 	}
 }
+
+func Test_genCombinations(t *testing.T) {
+	type args struct {
+		candidates []int
+		target     int
+	}
+	tests := []struct {
+		name string
+		args args
+		want [][]int
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := genCombinations(tt.args.candidates, tt.args.target); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("genCombinations() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
