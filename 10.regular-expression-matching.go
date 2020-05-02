@@ -89,7 +89,18 @@ package leetcode
 // @lc code=start
 func isMatch(s string, p string) bool {
 	lenS, lenP := len(s), len(p)
-	return lenS == lenP
+	match := make([][]bool, lenS+1)
+	for i := 0; i <= lenS; i++ {
+		match[i] = make([]bool, lenP+1)
+	}
+	match[0][0] = true
+
+	for i := 1; i <= lenS; i++ {
+		for j := 1; j <= lenP; j++ {
+
+		}
+	}
+	return match[lenS][lenP]
 }
 
 // @lc code=end
