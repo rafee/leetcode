@@ -73,7 +73,9 @@
 
 package leetcode
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_isCousins(t *testing.T) {
 	type args struct {
@@ -92,6 +94,28 @@ func Test_isCousins(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := isCousins(tt.args.root, tt.args.x, tt.args.y); got != tt.want {
 				t.Errorf("isCousins() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_bfs(t *testing.T) {
+	type args struct {
+		nodes []*TreeNode
+		x     int
+		y     int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := bfs(tt.args.nodes, tt.args.x, tt.args.y); got != tt.want {
+				t.Errorf("bfs() = %v, want %v", got, tt.want)
 			}
 		})
 	}
