@@ -70,24 +70,3 @@ func Test_searchRange(t *testing.T) {
 		})
 	}
 }
-
-func Test_findNum(t *testing.T) {
-	type args struct {
-		nums   []int
-		target int
-	}
-	tests := []struct {
-		name string
-		args args
-		want int
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := findNum(tt.args.nums, tt.args.target); got != tt.want {
-				t.Errorf("findNum() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
