@@ -13,7 +13,7 @@ type Trie struct {
 }
 
 /** Initialize your data structure here. */
-func Constructor() Trie {
+func TrieConstructor() Trie {
 	trie := new(Trie)
 	trie.children = make(map[byte]*Trie)
 	return *trie
@@ -29,7 +29,7 @@ func (this *Trie) Insert(word string) {
 	if found {
 		next.Insert(word[1:])
 	} else {
-		nextTrie := Constructor()
+		nextTrie := TrieConstructor()
 		nextTrie.Insert(word[1:])
 		this.children[word[0]] = &nextTrie
 	}

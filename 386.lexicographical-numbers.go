@@ -28,20 +28,20 @@ package leetcode
 func lexicalOrder(n int) []int {
 	res := make([]int, 0)
 	for i := 1; i < 10 && i <= n; i++ {
-		res = dfs(i, n, res)
+		dfs(i, n, &res)
 	}
 	return res
 }
-func dfs(st, n int, res []int) []int {
-	res = append(res, st)
+func dfs(st, n int, res *[]int) {
+	*res = append(*res, st)
 	st *= 10
 	for i := 0; i < 10; i++ {
 		if st+i > n {
-			return res
+			return
 		}
-		res = dfs(st+i, n, res)
+		dfs(st+i, n, res)
 	}
-	return res
+	return
 }
 
 // @lc code=end

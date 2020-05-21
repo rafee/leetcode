@@ -48,27 +48,56 @@
 
 package leetcode
 
+import "fmt"
+
 // @lc code=start
-// func criticalConnections(n int, connections [][]int) [][]int {
-// 	g := make([][]int, n)
-// 	for _, conn := range connections {
-// 		i, j := conn[0], conn[1]
-// 		// if i > j {
-// 		// 	conn[0], conn[1] = conn[1], conn[0]
-// 		// }
-// 		g[i] = append(g[i], j)
-// 		g[j] = append(g[j], i)
-// 	}
-// 	fmt.Println(g)
-// 	fmt.Println(connections)
-// 	rank := make([]int, n)
-// 	rank[0] = 0
-// 	criticalVisit(g, rank, 0, 0)
-// 	return connections
-// }
+func criticalConnections(n int, connections [][]int) [][]int {
+	adjList := make([][]int, n)
+	for i := 0; i < n; i++ {
+		adjList[i] = make([]int, 0)
+	}
+	for _, edge := range connections {
+		adjList[edge[0]] = append(adjList[edge[0]], edge[1])
+		adjList[edge[1]] = append(adjList[edge[1]], edge[0])
+	}
+	rank := make([]int, n)
+	for i := 0; i < n; i++ {
+		rank[i] = -1
+	}
+	result := make([][]int, 0)
+	highRank := 0
+	for _, node := range adjList[0] {
+		_, highRank = visitNode(adjList, &result, rank, node, 0, highRank)
+	}
+	return result
+}
 
-// func criticalVisit(g [][]int, rank []int, node, dep int) (r int) {
-
-// }
+func visitNode(graph [][]int, result *[][]int, rank []int, node int, pre int, curRank int) (int, int) {
+	lowestRank, highestRank := curRank, curRank
+	if rank[node] == -1 {
+		fmt.Println(node)
+		curRank++
+		rank[node] = curRank
+		for _, curNode := range graph[node] {
+			if curNode == node {
+				continue
+			}
+			lowRank, highRank := visitNode(graph, result, rank, curNode, node, curRank)
+			if lowRank > curRank {
+				*result = append(*result, []int{node, curNode})
+			}
+			if lowRank < lowestRank {
+				lowestRank = lowRank
+			}
+			if highRank > highestRank {
+				highestRank = highRank
+			}
+		}
+	} else if rank[node] < curRank {
+		fmt.Println(node)
+		return rank[node], curRank
+	}
+	return lowestRank, highestRank
+}
 
 // @lc code=end

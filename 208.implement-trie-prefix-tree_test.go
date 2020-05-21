@@ -11,22 +11,6 @@ import (
 	"testing"
 )
 
-func TestConstructor(t *testing.T) {
-	tests := []struct {
-		name string
-		want Trie
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := Constructor(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Constructor() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestTrie_Insert(t *testing.T) {
 	type args struct {
 		word string
@@ -82,6 +66,22 @@ func TestTrie_StartsWith(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := tt.this.StartsWith(tt.args.prefix); got != tt.want {
 				t.Errorf("Trie.StartsWith() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestTrieConstructor(t *testing.T) {
+	tests := []struct {
+		name string
+		want Trie
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := TrieConstructor(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("TrieConstructor() = %v, want %v", got, tt.want)
 			}
 		})
 	}
