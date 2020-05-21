@@ -66,7 +66,7 @@
 package leetcode
 
 // @lc code=start
-func rotate(matrix [][]int) {
+func rotateMatrix(matrix [][]int) {
 	length := len(matrix)
 	for i := 0; i < length; i++ {
 		for j := 0; j < i; j++ {

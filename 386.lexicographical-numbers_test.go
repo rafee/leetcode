@@ -52,3 +52,22 @@ func Test_lexicalOrder(t *testing.T) {
 		})
 	}
 }
+
+func Test_dfs(t *testing.T) {
+	type args struct {
+		st  int
+		n   int
+		res *[]int
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			dfs(tt.args.st, tt.args.n, tt.args.res)
+		})
+	}
+}

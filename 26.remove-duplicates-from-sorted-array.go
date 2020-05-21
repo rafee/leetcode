@@ -65,16 +65,18 @@ package leetcode
 
 // @lc code=start
 func removeDuplicates(nums []int) int {
-	numSet := make(map[int]bool)
-	uniqueIndex := 0
-	for _, element := range nums {
-		if numSet[element] == false {
-			numSet[element] = true
-			nums[uniqueIndex] = element
-			uniqueIndex++
+	numLen := len(nums)
+	if numLen <= 1 {
+		return numLen
+	}
+	i := 0
+	for j := 1; j < numLen; j++ {
+		if nums[j] != nums[i] {
+			i++
+			nums[i] = nums[j]
 		}
 	}
-	return uniqueIndex
+	return i + 1
 }
 
 // @lc code=end

@@ -67,7 +67,7 @@ package leetcode
 
 import "testing"
 
-func Test_rotate(t *testing.T) {
+func Test_rotateMatrix(t *testing.T) {
 	type args struct {
 		matrix [][]int
 	}
@@ -89,7 +89,7 @@ func Test_rotate(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			rotate(tt.args.matrix)
+			rotateMatrix(tt.args.matrix)
 		})
 	}
 }
