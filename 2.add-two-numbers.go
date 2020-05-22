@@ -44,35 +44,35 @@ package leetcode
 // @lc code=start
 
 func addTwoNumbersLSBFirst(l1 *ListNode, l2 *ListNode) *ListNode {
-	resultNode := &ListNode{}
-	curNode := resultNode
-	leading := 0
+	result := &ListNode{}
+	cur := result
+	carry := 0
 	value := 0
 	for {
 		if l2 == nil && l1 != nil {
-			value = l1.Val + leading
+			value = l1.Val + carry
 			l1 = l1.Next
 		} else if l1 == nil && l2 != nil {
-			value = l2.Val + leading
+			value = l2.Val + carry
 			l2 = l2.Next
 		} else if l1 == nil && l2 == nil {
 			break
 		} else {
-			value = l1.Val + l2.Val + leading
+			value = l1.Val + l2.Val + carry
 			l1 = l1.Next
 			l2 = l2.Next
 		}
 
-		curNode.Next = &ListNode{value % 10, nil}
-		leading = value / 10
-		curNode = curNode.Next
+		cur.Next = &ListNode{value % 10, nil}
+		carry = value / 10
+		cur = cur.Next
 	}
 
-	if leading != 0 {
-		curNode.Next = &ListNode{1, nil}
+	if carry != 0 {
+		cur.Next = &ListNode{carry, nil}
 	}
 
-	return resultNode.Next
+	return result.Next
 }
 
 // @lc code=end

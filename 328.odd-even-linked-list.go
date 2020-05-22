@@ -14,21 +14,29 @@ package leetcode
  *     Next *ListNode
  * }
  */
-// func oddEvenList(head *ListNode) *ListNode {
-// 	odd, even := head, &ListNode{}
-// 	oddIterator, evenIterator := &ListNode{}, &ListNode{}
-// 	for i := 0; head != nil; i++ {
-// 		if i%2 == 0 {
-// 			odd = head
-// 			head = head.Next
-// 			odd = odd.Next
-// 		} else {
-// 			even = head
-// 			head = head.Next
-// 		}
-// 	}
-// 	odd.Next = even
-// 	return odd
-// }
+func oddEvenList(head *ListNode) *ListNode {
+	odd, even := &ListNode{}, &ListNode{}
+	oddHead, evenHead := odd, even
+	for i := 0; head != nil; i++ {
+		if isEven(i) {
+			even, head = getNext(even, head)
+		} else {
+			odd, head = getNext(odd, head)
+		}
+	}
+
+	odd.Next = nil
+	even.Next = oddHead.Next
+	return evenHead.Next
+}
+
+func getNext(node *ListNode, head *ListNode) (*ListNode, *ListNode) {
+	node.Next = head
+	return node.Next, head.Next
+}
+
+func isEven(num int) bool {
+	return (num & 1) == 0
+}
 
 // @lc code=end

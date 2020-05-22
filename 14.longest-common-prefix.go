@@ -41,30 +41,25 @@
 
 package leetcode
 
-import "math"
+import (
+	"strings"
+)
 
 // @lc code=start
 func longestCommonPrefix(strs []string) string {
-	commonPrefix := ""
 	if len(strs) == 0 {
-		return commonPrefix
+		return ""
 	}
-	minLengthStr := math.MaxInt64
-	for _, str := range strs {
-		if len(str) < minLengthStr {
-			minLengthStr = len(str)
-		}
-	}
-	for charIndex := 0; charIndex < minLengthStr; charIndex++ {
-		currentChar := strs[0][charIndex]
-		for strIndex := 0; strIndex < len(strs); strIndex++ {
-			if currentChar != strs[strIndex][charIndex] {
-				return commonPrefix
+
+	var sb strings.Builder
+	for i := 0; ; i++ {
+		for _, str := range strs {
+			if i == len(str) || strs[0][i] != str[i] {
+				return sb.String()
 			}
 		}
-		commonPrefix += string(currentChar)
+		sb.WriteByte(strs[0][i])
 	}
-	return commonPrefix
 }
 
 // @lc code=end
