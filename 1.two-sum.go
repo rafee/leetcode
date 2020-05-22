@@ -37,13 +37,11 @@ func twoSum(nums []int, target int) []int {
 	solution := make([]int, 0)
 	numMap := make(map[int]int)
 	for i, num := range nums {
-		numMap[target-num] = i
-	}
-
-	for i, num := range nums {
-		if val, ok := numMap[num]; ok && val != i {
-			return []int{i, val}
+		j, found := numMap[target-num]
+		if found {
+			return []int{j, i}
 		}
+		numMap[num] = i
 	}
 	return solution
 }

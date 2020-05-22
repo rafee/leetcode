@@ -37,7 +37,7 @@ package leetcode
 
 // @lc code=start
 
-func getInnerPalndromeLength(s string, left, right int) int {
+func getInnerPalndrome(s string, left, right int) int {
 	for ; left >= 0 && right < len(s); left, right = left-1, right+1 {
 		if s[left] != s[right] {
 			break
@@ -54,16 +54,12 @@ func longestPalindrome(s string) string {
 	start := 0
 	end := 1
 	for i := 0; i < len(s)-1; i++ {
-		even := getInnerPalndromeLength(s, i, i+1)
-		odd := getInnerPalndromeLength(s, i, i)
+		even := getInnerPalndrome(s, i, i+1)
+		odd := getInnerPalndrome(s, i, i)
 		curLen := max(even, odd)
 		if curLen > maxLength {
 			maxLength = curLen
-			if curLen == even {
-				start = i - curLen/2 + 1
-			} else {
-				start = i - curLen/2
-			}
+			start = i - (curLen+1)/2 + 1
 			end = i + curLen/2 + 1
 		}
 	}

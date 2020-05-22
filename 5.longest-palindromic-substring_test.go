@@ -52,7 +52,7 @@ func Test_getInnerPalndromeLength(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := getInnerPalndromeLength(tt.args.s, tt.args.left, tt.args.right); got != tt.want {
+			if got := getInnerPalndrome(tt.args.s, tt.args.left, tt.args.right); got != tt.want {
 				t.Errorf("getInnerPalndromeLength() = %v, want %v", got, tt.want)
 			}
 		})
