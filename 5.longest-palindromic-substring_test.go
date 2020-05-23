@@ -35,7 +35,9 @@
 
 package leetcode
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_getInnerPalndromeLength(t *testing.T) {
 	type args struct {
@@ -89,6 +91,28 @@ func Test_longestPalindrome(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := longestPalindrome(tt.args.s); got != tt.want {
 				t.Errorf("longestPalindrome() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_getInnerPalndrome(t *testing.T) {
+	type args struct {
+		s     string
+		left  int
+		right int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := getInnerPalndrome(tt.args.s, tt.args.left, tt.args.right); got != tt.want {
+				t.Errorf("getInnerPalndrome() = %v, want %v", got, tt.want)
 			}
 		})
 	}
