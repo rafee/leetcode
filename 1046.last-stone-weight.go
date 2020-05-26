@@ -55,9 +55,7 @@
 
 package leetcode
 
-import (
-	"container/heap"
-)
+import "container/heap"
 
 // @lc code=start
 func lastStoneWeight(stones []int) int {

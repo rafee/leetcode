@@ -57,11 +57,11 @@ import "math"
  * }
  */
 func bstFromPreorder(preorder []int) *TreeNode {
-	root, _ := bstWithArr(preorder, math.MaxInt64)
+	root, _ := bstPreRecursive(preorder, math.MaxInt64)
 	return root
 }
 
-func bstWithArr(nums []int, limit int) (*TreeNode, []int) {
+func bstPreRecursive(nums []int, limit int) (*TreeNode, []int) {
 	if len(nums) == 0 || nums[0] > limit {
 		return nil, nums
 	}
@@ -70,8 +70,8 @@ func bstWithArr(nums []int, limit int) (*TreeNode, []int) {
 		return root, []int{}
 	}
 	var numsRight, numsTop []int
-	root.Left, numsRight = bstWithArr(nums[1:], nums[0])
-	root.Right, numsTop = bstWithArr(numsRight, limit)
+	root.Left, numsRight = bstPreRecursive(nums[1:], nums[0])
+	root.Right, numsTop = bstPreRecursive(numsRight, limit)
 	return root, numsTop
 }
 
