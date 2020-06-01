@@ -1,15 +1,23 @@
 package leetcode
 
-func max(x, y int) int {
-	if x > y {
-		return x
+import "math"
+
+func max(nums ...int) int {
+	max := math.MinInt64
+	for _, num := range nums {
+		if num > max {
+			max = num
+		}
 	}
-	return y
+	return max
 }
 
-func min(x, y int) int {
-	if x < y {
-		return x
+func min(nums ...int) int {
+	min := math.MaxInt64
+	for _, num := range nums {
+		if num < min {
+			min = num
+		}
 	}
-	return y
+	return min
 }
