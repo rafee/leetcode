@@ -11,7 +11,7 @@ type StockSpanner struct {
 	stack [][2]int
 }
 
-func Constructor() StockSpanner {
+func StockConstructor() StockSpanner {
 	newStockSpanner := new(StockSpanner)
 	newStockSpanner.stack = make([][2]int, 0)
 	return *newStockSpanner

@@ -11,7 +11,7 @@ import (
 	"testing"
 )
 
-func TestConstructor(t *testing.T) {
+func TestStockConstructor(t *testing.T) {
 	tests := []struct {
 		name string
 		want StockSpanner
@@ -20,7 +20,7 @@ func TestConstructor(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := Constructor(); !reflect.DeepEqual(got, tt.want) {
+			if got := StockConstructor(); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Constructor() = %v, want %v", got, tt.want)
 			}
 		})
