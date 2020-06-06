@@ -40,7 +40,7 @@
 package leetcode
 
 // @lc code=start
-func singleNumber(nums []int) int {
+func singleNumberI(nums []int) int {
 	result := 0
 	for _, num := range nums {
 		result ^= num

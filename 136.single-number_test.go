@@ -41,7 +41,7 @@ package leetcode
 
 import "testing"
 
-func Test_singleNumber(t *testing.T) {
+func Test_singleNumberI(t *testing.T) {
 	type args struct {
 		nums []int
 	}
@@ -54,7 +54,7 @@ func Test_singleNumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := singleNumber(tt.args.nums); got != tt.want {
+			if got := singleNumberI(tt.args.nums); got != tt.want {
 				t.Errorf("singleNumber() = %v, want %v", got, tt.want)
 			}
 		})
