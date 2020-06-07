@@ -41,7 +41,6 @@ func dfs(st, n int, res *[]int) {
 		}
 		dfs(st+i, n, res)
 	}
-	return
 }
 
 // @lc code=end

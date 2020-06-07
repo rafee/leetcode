@@ -79,7 +79,7 @@ func dijkstra(grid [][]int) int {
 		}
 		if node[1] < (X - 1) {
 			x, y := node[1]+1, node[2]
-			if visited[x][y] == false {
+			if !visited[x][y] {
 				visited[x][y] = true
 				down := [3]int{path + grid[x][y], x, y}
 				heap.Push(h, down)
@@ -87,7 +87,7 @@ func dijkstra(grid [][]int) int {
 		}
 		if node[2] < (Y - 1) {
 			x, y := node[1], node[2]+1
-			if visited[x][y] == false {
+			if !visited[x][y] {
 				right := [3]int{path + grid[x][y], x, y}
 				heap.Push(h, right)
 			}

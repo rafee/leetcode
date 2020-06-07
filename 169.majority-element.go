@@ -38,7 +38,7 @@ package leetcode
 
 // @lc code=start
 func majorityElement(nums []int) int {
-	numMap := make(map[int]int, 0)
+	numMap := make(map[int]int)
 	maxCount := len(nums) / 2
 	for _, num := range nums {
 		numMap[num]++

@@ -12,7 +12,7 @@ import (
 
 // @lc code=start
 func frequencySort(s string) string {
-	charMap := make(map[byte]int, 0)
+	charMap := make(map[byte]int)
 	for i := 0; i < len(s); i++ {
 		charMap[s[i]]++
 	}

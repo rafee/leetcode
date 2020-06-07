@@ -8,7 +8,7 @@ package leetcode
 
 // @lc code=start
 func containsDuplicate(nums []int) bool {
-	set := make(map[int]bool, 0)
+	set := make(map[int]bool)
 	for _, num := range nums {
 		if set[num] {
 			return true

@@ -55,7 +55,7 @@ func threeSum(nums []int) [][]int {
 		numMap[num] = i
 	}
 
-	solution := make(map[[3]int]bool, 0)
+	solution := make(map[[3]int]bool)
 	for i := 0; i < len(nums)-2; i++ {
 		for j := i + 1; j < len(nums)-1; j++ {
 			twoSum := nums[i] + nums[j]

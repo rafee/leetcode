@@ -41,7 +41,7 @@ package leetcode
 
 // @lc code=start
 func canConstruct(ransomNote string, magazine string) bool {
-	set := make(map[rune]int, 0)
+	set := make(map[rune]int)
 	for _, char := range magazine {
 		set[char]++
 	}

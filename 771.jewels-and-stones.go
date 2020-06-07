@@ -49,7 +49,7 @@ package leetcode
 
 // @lc code=start
 func numJewelsInStones(J string, S string) int {
-	set := make(map[rune]bool, 0)
+	set := make(map[rune]bool)
 	for _, jewel := range J {
 		set[jewel] = true
 	}

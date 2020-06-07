@@ -36,7 +36,7 @@ package leetcode
 
 // @lc code=start
 func firstUniqChar(s string) int {
-	charMap := make(map[byte]int, 0)
+	charMap := make(map[byte]int)
 	for i := 0; i < len(s); i++ {
 		charMap[s[i]]++
 	}

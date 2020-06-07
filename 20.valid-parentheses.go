@@ -140,10 +140,7 @@ func isValid(s string) bool {
 			}
 		}
 	}
-	if data.Len() != 0 {
-		return false
-	}
-	return true
+	return data.Len() == 0
 }
 
 // @lc code=end

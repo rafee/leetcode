@@ -97,7 +97,8 @@ func parseAtoi(str string) uint64 {
 	result := uint64(0)
 	for _, char := range str {
 		val := uint64(char - '0')
-		if val >= 0 && val < 10 {
+		// No check for val<0 because it'll overflow if it goes otherway
+		if val < 10 {
 			result = (result * 10) + val
 		} else {
 			break

@@ -29,13 +29,6 @@ func printList(l *ListNode) (s string) {
 	return s
 }
 
-// An pqListNode is something we manage in a priority queue.
-type pqListNode struct {
-	node *ListNode // The value of the item; arbitrary.
-	// The index is needed by update and is maintained by the heap.Interface methods.
-	index int // The index of the item in the heap.
-}
-
 // A pqLinkedList implements heap.Interface and holds Items.
 type pqLinkedList []*ListNode
 

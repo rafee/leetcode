@@ -46,7 +46,6 @@ func iPAdrressHelper(s string, segments []string, result *[]string) {
 			}
 		}
 	}
-	return
 }
 
 // chkNum checks for leading zeros or whether the number is greater than 255.

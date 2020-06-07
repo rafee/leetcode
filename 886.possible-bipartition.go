@@ -31,7 +31,7 @@ func possibleBipartition(N int, dislikes [][]int) bool {
 func visitNext(graph [][]bool, colors map[int]bool, src int, color bool) bool {
 	colors[src] = color
 	for i := 0; i < len(graph); i++ {
-		if graph[src][i] == true {
+		if graph[src][i] {
 			_, found := colors[i]
 			if found && colors[i] == color {
 				return false

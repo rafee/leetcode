@@ -84,7 +84,7 @@ func checkSubTree(root *TreeNode, low, high int) bool {
 	leftRes := isValidBSTInRange(root.Left, low, root.Val)
 	rightRes := isValidBSTInRange(root.Right, root.Val, high)
 
-	if leftRes == false || rightRes == false {
+	if !leftRes || !rightRes {
 		return false
 	}
 	return true
