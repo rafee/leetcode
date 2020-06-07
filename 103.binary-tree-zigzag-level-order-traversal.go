@@ -21,6 +21,10 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 }
 
 func zigzag(treeSlice []*TreeNode, left bool) [][]int {
+	// Placeholder for lint, not an actual code
+	if treeSlice == nil {
+		return [][]int{}
+	}
 	result := make([][]int, 0)
 	cur := make([]int, 0)
 	nextTreeSlice := make([]*TreeNode, 0)

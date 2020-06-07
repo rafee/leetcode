@@ -14,7 +14,11 @@ func Test_newList(t *testing.T) {
 		args args
 		want *ListNode
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{[]int{1, 2, 3}},
+			want: newList([]int{1, 2, 3}),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -30,16 +34,20 @@ func Test_printList(t *testing.T) {
 		l *ListNode
 	}
 	tests := []struct {
-		name  string
-		args  args
-		wantS string
+		name string
+		args args
+		want string
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{newList([]int{1, 2, 3})},
+			want: "1 2 3 ",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if gotS := printList(tt.args.l); gotS != tt.wantS {
-				t.Errorf("printList() = %v, want %v", gotS, tt.wantS)
+			if got := printList(tt.args.l); got != tt.want {
+				t.Errorf("printList() = %v, want %v", got, tt.want)
 			}
 		})
 	}

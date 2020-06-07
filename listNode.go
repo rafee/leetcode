@@ -8,10 +8,11 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func newList(vals []int) *ListNode {
+// newList creates a new list from list of ints
+func newList(nums []int) *ListNode {
 	listNode := &ListNode{}
 	original := listNode
-	for _, v := range vals {
+	for _, v := range nums {
 		temp := &ListNode{}
 		temp.Val = v
 		listNode.Next = temp
@@ -20,6 +21,7 @@ func newList(vals []int) *ListNode {
 	return original.Next
 }
 
+// printList prints a ListNode for debugging purpose
 func printList(l *ListNode) (s string) {
 	s = ""
 	for l != nil {
