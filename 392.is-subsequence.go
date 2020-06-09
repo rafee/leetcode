@@ -56,17 +56,13 @@ package leetcode
 
 // @lc code=start
 func isSubsequence(s string, t string) bool {
-	lenT, lenS := len(t), len(s)
-	if lenS == 0 {
+	if len(s) == 0 {
 		return true
 	}
-	if lenT == 0 {
-		return false
-	}
-	for i, j := 0, 0; i < lenT; i++ {
+	for i, j := 0, 0; i < len(t); i++ {
 		if t[i] == s[j] {
 			j++
-			if j == lenS {
+			if j == len(s) {
 				return true
 			}
 		}
