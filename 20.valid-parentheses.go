@@ -66,81 +66,38 @@ package leetcode
 
 // @lc code=start
 
-// Stack is a data type for Stack data structuire
-type (
-	Stack struct {
-		top    *node
-		length int
-	}
-	node struct {
-		value interface{}
-		prev  *node
-	}
-)
-
-// Create a new stack
-func stackNew() *Stack {
-	return &Stack{nil, 0}
-}
-
-// Len returns the number of items in the stack
-func (object *Stack) Len() int {
-	return object.length
-}
-
-// Peek shows the top item on the stack
-func (object *Stack) Peek() interface{} {
-	if object.length == 0 {
-		return nil
-	}
-	return object.top.value
-}
-
-// Pop the top item of the stack and return it
-func (object *Stack) Pop() interface{} {
-	if object.length == 0 {
-		return nil
-	}
-
-	n := object.top
-	object.top = n.prev
-	object.length--
-	return n.value
-}
-
-// Push a value onto the top of the stack
-func (object *Stack) Push(value interface{}) {
-	n := &node{value, object.top}
-	object.top = n
-	object.length++
-}
-
 func isValid(s string) bool {
-	data := stackNew()
-	for _, char := range s {
-		switch char {
+	stack := make([]byte, 0)
+	lookupMap := map[byte]byte{
+		'(': ')',
+		'{': '}',
+		'[': ']',
+	}
+	for i := 0; i < len(s); i++ {
+		switch s[i] {
 		case '(':
-			data.Push(')')
+			fallthrough
 		case '{':
-			data.Push('}')
+			fallthrough
 		case '[':
-			data.Push(']')
+			stack = append(stack, lookupMap[s[i]])
 
 		case ')':
 			fallthrough
 		case '}':
 			fallthrough
 		case ']':
-			if data.Len() == 0 {
+			if len(stack) == 0 {
 				return false
 			}
-			ch := data.Pop()
-			if ch != char {
+			top := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			if top != s[i] {
 				return false
 			}
 		}
 	}
-	return data.Len() == 0
+	return len(stack) == 0
 }
 
 // @lc code=end
