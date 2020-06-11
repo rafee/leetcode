@@ -14,7 +14,7 @@ type Solution struct {
 	limit  int
 }
 
-func Constructor(w []int) Solution {
+func SolConstructor(w []int) Solution {
 	sol := new(Solution)
 	sol.cumSum = make([]int, len(w))
 	val := 0

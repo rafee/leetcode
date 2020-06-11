@@ -11,26 +11,6 @@ import (
 	"testing"
 )
 
-func TestConstructor(t *testing.T) {
-	type args struct {
-		w []int
-	}
-	tests := []struct {
-		name string
-		args args
-		want Solution
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := Constructor(tt.args.w); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Constructor() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestSolution_PickIndex(t *testing.T) {
 	tests := []struct {
 		name string
@@ -64,6 +44,26 @@ func TestSolution_bSearch(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := tt.this.bSearch(tt.args.target); got != tt.want {
 				t.Errorf("Solution.bSearch() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestSolConstructor(t *testing.T) {
+	type args struct {
+		w []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want Solution
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := SolConstructor(tt.args.w); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("SolConstructor() = %v, want %v", got, tt.want)
 			}
 		})
 	}
