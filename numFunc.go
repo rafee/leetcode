@@ -21,3 +21,8 @@ func min(nums ...int) int {
 	}
 	return min
 }
+
+func popLast(nums []int) (int, []int) {
+	num, nums := nums[len(nums)-1], nums[:len(nums)-1]
+	return num, nums
+}
