@@ -29,6 +29,7 @@ func largestDivisibleSubset(nums []int) []int {
 				if count[i] > max {
 					max = count[i]
 					maxIndex = i
+					break
 				}
 			}
 		}
