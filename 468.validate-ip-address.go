@@ -27,10 +27,10 @@ func checkIPv4(segments []string) string {
 			return "Neither"
 		}
 		checkRange4 := func(b int) bool {
-			return b < 10
+			return b < 10 && b >=0
 		}
 		num := int(seg[0] - '0')
-		if !checkRange4(num) {
+		if !checkRange4(num) || (num == 0 && len(seg) > 1) {
 			return "Neither"
 		}
 		for i := 1; i < len(seg); i++ {
@@ -40,7 +40,7 @@ func checkIPv4(segments []string) string {
 				return "Neither"
 			}
 			num += b
-			if num == b || num > 255 {
+			if num > 255 {
 				return "Neither"
 			}
 		}
