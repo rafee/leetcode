@@ -61,23 +61,23 @@ package leetcode
 func searchBST(root *TreeNode, val int) *TreeNode {
 
 	// Recursive Solution
-	if root == nil || root.Val == val {
-		return root
-	} else if root.Val > val {
-		return searchBST(root.Left, val)
-	} else {
-		return searchBST(root.Right, val)
-	}
-
-	// Iterative Solution
-	// for root != nil && root.Val != val {
-	// 	if root.Val > val {
-	// 		root = root.Left
-	// 	} else {
-	// 		root = root.Right
-	// 	}
+	// if root == nil || root.Val == val {
+	// 	return root
+	// } else if root.Val > val {
+	// 	return searchBST(root.Left, val)
+	// } else {
+	// 	return searchBST(root.Right, val)
 	// }
-	// return root
+
+	// iterative solution
+	for root != nil && root.Val != val {
+		if root.Val > val {
+			root = root.Left
+		} else {
+			root = root.Right
+		}
+	}
+	return root
 }
 
 // @lc code=end
