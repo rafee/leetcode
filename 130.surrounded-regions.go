@@ -49,6 +49,8 @@
 
 package leetcode
 
+import "sync"
+
 // @lc code=start
 func solve(board [][]byte) {
 	X := len(board)
@@ -72,19 +74,24 @@ func solve(board [][]byte) {
 			visit(board, X-1, j)
 		}
 	}
+
+	wg := sync.WaitGroup{}
 	for i := 0; i < X; i++ {
 		for j := 0; j < Y; j++ {
-			restoreBoard(board, i, j)
+			wg.Add(1)
+			restoreBoard(board, i, j, &wg)
 		}
 	}
+	wg.Wait()
 }
 
-func restoreBoard(board [][]byte, i int, j int) {
+func restoreBoard(board [][]byte, i int, j int, wg *sync.WaitGroup) {
 	if board[i][j] == '*' {
 		board[i][j] = 'O'
 	} else if board[i][j] == 'O' {
 		board[i][j] = 'X'
 	}
+	wg.Done()
 }
 
 func visit(board [][]byte, x, y int) {
