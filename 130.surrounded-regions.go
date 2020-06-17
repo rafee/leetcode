@@ -74,25 +74,33 @@ func solve(board [][]byte) {
 	}
 	for i := 0; i < X; i++ {
 		for j := 0; j < Y; j++ {
-			if board[i][j] == '*' {
-				board[i][j] = 'O'
-			} else if board[i][j] == 'O' {
-				board[i][j] = 'X'
-			}
+			restoreBoard(board, i, j)
 		}
 	}
 }
 
-func visit(board [][]byte, x, y int) {
-	if x < 0 || x > len(board)-1 || y < 0 || y > len(board[0])-1 || board[x][y] != 'O' {
-		return
+func restoreBoard(board [][]byte, i int, j int) {
+	if board[i][j] == '*' {
+		board[i][j] = 'O'
+	} else if board[i][j] == 'O' {
+		board[i][j] = 'X'
 	}
+}
 
+func visit(board [][]byte, x, y int) {
 	board[x][y] = '*'
-	visit(board, x-1, y)
-	visit(board, x+1, y)
-	visit(board, x, y-1)
-	visit(board, x, y+1)
+	if x > 1 && board[x-1][y] == 'O' {
+		visit(board, x-1, y)
+	}
+	if x < len(board)-2 && board[x+1][y] == 'O' {
+		visit(board, x+1, y)
+	}
+	if y > 1 && board[x][y-1] == 'O' {
+		visit(board, x, y-1)
+	}
+	if y < len(board[0])-2 && board[x][y+1] == 'O' {
+		visit(board, x, y+1)
+	}
 }
 
 // @lc code=end
