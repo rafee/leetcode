@@ -141,8 +141,6 @@ func Test_visit(t *testing.T) {
 		board [][]byte
 		x     int
 		y     int
-		X     int
-		Y     int
 	}
 	tests := []struct {
 		name string
@@ -152,7 +150,7 @@ func Test_visit(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			visit(tt.args.board, tt.args.x, tt.args.y, tt.args.X, tt.args.Y)
+			visit(tt.args.board, tt.args.x, tt.args.y)
 		})
 	}
 }
