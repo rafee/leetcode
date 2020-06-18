@@ -51,6 +51,7 @@ package leetcode
 
 import (
 	"reflect"
+	"sync"
 	"testing"
 )
 
@@ -151,6 +152,26 @@ func Test_visit(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			visit(tt.args.board, tt.args.x, tt.args.y)
+		})
+	}
+}
+
+func Test_restoreBoard(t *testing.T) {
+	type args struct {
+		board [][]byte
+		i     int
+		j     int
+		wg    *sync.WaitGroup
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			restoreBoard(tt.args.board, tt.args.i, tt.args.j, tt.args.wg)
 		})
 	}
 }
