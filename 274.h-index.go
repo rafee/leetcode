@@ -4,9 +4,11 @@
  * [274] H-Index
  */
 
+package leetcode
+
 // @lc code=start
 func hIndex(citations []int) int {
-    
+	return 0
 }
-// @lc code=end
 
+// @lc code=end
