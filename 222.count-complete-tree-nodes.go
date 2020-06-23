@@ -16,8 +16,19 @@ package leetcode
  * }
  */
 func countNodes(root *TreeNode) int {
-	if root == nil {
-		return 0
+	left, right := root, root
+	lH, rH := 0, 0
+	for left != nil {
+		left = left.Left
+		lH++
+	}
+	for right != nil {
+		right = right.Right
+		rH++
+	}
+
+	if lH == rH {
+		return (1 << lH) - 1
 	}
 	return countNodes(root.Left) + countNodes(root.Right) + 1
 }
