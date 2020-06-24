@@ -6,3 +6,9 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
+// func makeBST(nums []int) *TreeNode {
+// 	root := &TreeNode{}
+// 	root.Val = nums[0]
+// 	for
+// }
