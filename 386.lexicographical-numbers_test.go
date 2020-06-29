@@ -53,7 +53,7 @@ func Test_lexicalOrder(t *testing.T) {
 	}
 }
 
-func Test_dfs(t *testing.T) {
+func Test_lexicalDFS(t *testing.T) {
 	type args struct {
 		st  int
 		n   int
@@ -67,7 +67,7 @@ func Test_dfs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			dfs(tt.args.st, tt.args.n, tt.args.res)
+			lexicalDFS(tt.args.st, tt.args.n, tt.args.res)
 		})
 	}
 }

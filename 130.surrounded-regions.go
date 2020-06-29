@@ -60,18 +60,18 @@ func solve(board [][]byte) {
 	Y := len(board[0])
 	for i := 0; i < X; i++ {
 		if board[i][0] == 'O' {
-			visit(board, i, 0)
+			exploreBoard(board, i, 0)
 		}
 		if board[i][Y-1] == 'O' {
-			visit(board, i, Y-1)
+			exploreBoard(board, i, Y-1)
 		}
 	}
 	for j := 1; j < Y-1; j++ {
 		if board[0][j] == 'O' {
-			visit(board, 0, j)
+			exploreBoard(board, 0, j)
 		}
 		if board[X-1][j] == 'O' {
-			visit(board, X-1, j)
+			exploreBoard(board, X-1, j)
 		}
 	}
 
@@ -94,19 +94,19 @@ func restoreBoard(board [][]byte, i int, j int, wg *sync.WaitGroup) {
 	wg.Done()
 }
 
-func visit(board [][]byte, x, y int) {
+func exploreBoard(board [][]byte, x, y int) {
 	board[x][y] = '*'
 	if x > 1 && board[x-1][y] == 'O' {
-		visit(board, x-1, y)
+		exploreBoard(board, x-1, y)
 	}
 	if x < len(board)-2 && board[x+1][y] == 'O' {
-		visit(board, x+1, y)
+		exploreBoard(board, x+1, y)
 	}
 	if y > 1 && board[x][y-1] == 'O' {
-		visit(board, x, y-1)
+		exploreBoard(board, x, y-1)
 	}
 	if y < len(board[0])-2 && board[x][y+1] == 'O' {
-		visit(board, x, y+1)
+		exploreBoard(board, x, y+1)
 	}
 }
 

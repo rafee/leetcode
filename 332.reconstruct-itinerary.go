@@ -6,7 +6,10 @@
 
 package leetcode
 
-import "sort"
+import (
+	"fmt"
+	"sort"
+)
 
 // @lc code=start
 func findItinerary(tickets [][]string) []string {
@@ -20,20 +23,39 @@ func findItinerary(tickets [][]string) []string {
 		}
 	}
 
-	result := []string{"JFK"}
-	for dest := "JFK"; destMap[dest] != nil; {
-		stringSlice := destMap[dest]
-		sort.Strings(stringSlice)
-		pre := dest
-		dest = stringSlice[0]
-		if len(stringSlice) == 1 {
-			destMap[pre] = nil
-		} else {
-			destMap[pre] = stringSlice[1:]
-		}
-		result = append(result, dest)
+	for _, destinations := range destMap {
+		sort.Strings(destinations)
+		// fmt.Println(src,destinations)
 	}
+
+	result := visitAirport("JFK", destMap, []string{}, len(tickets))
 	return result
+}
+
+func visitAirport(src string, destMap map[string][]string, pre []string,
+	ttl int) []string {
+	curRes := append(pre, src)
+	destinations := make([]string, len(destMap[src]))
+	fmt.Println(curRes,ttl,destinations)
+	copy(destinations, destMap[src])
+	if len(destinations) == 0 {
+		if ttl != 0 {
+			return nil
+		}
+		return curRes
+	}
+
+	for i, dest := range destinations {
+		tmp := make([]string, len(destinations)-1)
+		copy(tmp[:i], destinations[:i])
+		copy(tmp[i:], destinations[i+1:])
+		destMap[src] = tmp
+		result := visitAirport(dest, destMap, curRes, ttl-1)
+		if result != nil {
+			return result
+		}
+	}
+	return nil
 }
 
 // @lc code=end

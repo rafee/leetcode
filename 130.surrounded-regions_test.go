@@ -137,25 +137,6 @@ func Test_solve(t *testing.T) {
 	}
 }
 
-func Test_visit(t *testing.T) {
-	type args struct {
-		board [][]byte
-		x     int
-		y     int
-	}
-	tests := []struct {
-		name string
-		args args
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			visit(tt.args.board, tt.args.x, tt.args.y)
-		})
-	}
-}
-
 func Test_restoreBoard(t *testing.T) {
 	type args struct {
 		board [][]byte
@@ -172,6 +153,25 @@ func Test_restoreBoard(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			restoreBoard(tt.args.board, tt.args.i, tt.args.j, tt.args.wg)
+		})
+	}
+}
+
+func Test_exploreBoard(t *testing.T) {
+	type args struct {
+		board [][]byte
+		x     int
+		y     int
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			exploreBoard(tt.args.board, tt.args.x, tt.args.y)
 		})
 	}
 }

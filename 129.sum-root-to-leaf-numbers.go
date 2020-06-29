@@ -23,17 +23,18 @@ func sumNumbers(root *TreeNode) int {
 }
 
 func getSumNumbers(root *TreeNode, s int) int {
+	curRootSum := 10*s + root.Val
 	if root.Right == nil && root.Left == nil {
-		return 10*s + root.Val
+		return curRootSum
 	}
-	res := 0
+	sum := 0
 	if root.Right != nil {
-		res += getSumNumbers(root.Right, 10*s+root.Val)
+		sum += getSumNumbers(root.Right, curRootSum)
 	}
 	if root.Left != nil {
-		res += getSumNumbers(root.Left, 10*s+root.Val)
+		sum += getSumNumbers(root.Left, curRootSum)
 	}
-	return res
+	return sum
 }
 
 // @lc code=end
