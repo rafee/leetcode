@@ -78,10 +78,10 @@ func chkExist(board [][]byte, word string, x, y, X, Y int) bool {
 			left := chkExist(board, word[1:], x, y-1, X, Y)
 			down := chkExist(board, word[1:], x+1, y, X, Y)
 			up := chkExist(board, word[1:], x-1, y, X, Y)
+			board[x][y] = tmp
 			if right || left || up || down {
 				return true
 			}
-			board[x][y] = tmp
 		}
 	}
 	return false

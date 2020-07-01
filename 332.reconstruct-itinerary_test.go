@@ -49,3 +49,26 @@ func Test_findItinerary(t *testing.T) {
 		})
 	}
 }
+
+func Test_visitAirport(t *testing.T) {
+	type args struct {
+		src     string
+		destMap map[string][]string
+		pre     []string
+		ttl     int
+	}
+	tests := []struct {
+		name string
+		args args
+		want []string
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := visitAirport(tt.args.src, tt.args.destMap, tt.args.pre, tt.args.ttl); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("visitAirport() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
