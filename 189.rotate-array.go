@@ -8,18 +8,19 @@ package leetcode
 
 // @lc code=start
 func rotate(nums []int, k int) {
-	numLen := len(nums)
-	for count, i := 0, 0; count < numLen; {
-		j := (i + k) % numLen
-		num := nums[i]
-		for i != j {
-			tmp := nums[j]
-			nums[j] = num
-			j = (j + k) % numLen
-			num = tmp
+	k = k % len(nums)
+	for start, count := 0, 0; count < len(nums); {
+		current := start
+		prev := nums[start]
+		for {
+			next := (current + k) % len(nums)
+			nums[next], prev = prev, nums[next]
+			current = next
 			count++
+			if start == current {
+				break
+			}
 		}
-		i++
 	}
 }
 
