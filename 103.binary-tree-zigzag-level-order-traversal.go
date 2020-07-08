@@ -15,30 +15,31 @@ package leetcode
  *     Right *TreeNode
  * }
  */
-func zigzagLevelOrder(root *TreeNode) [][]int {
-	left := false
-	return zigzag([]*TreeNode{root}, left)
-}
+// func zigzagLevelOrder(root *TreeNode) [][]int {
+// 	left := false
+// 	tree := zigzagTree([][]*TreeNode{{root}}, left)
+// 	return genArray(tree)
+// }
 
-func zigzag(treeSlice []*TreeNode, left bool) [][]int {
-	// Placeholder for lint, not an actual code
-	if treeSlice == nil {
-		return [][]int{}
-	}
-	result := make([][]int, 0)
-	cur := make([]int, 0)
-	nextTreeSlice := make([]*TreeNode, 0)
-	if left {
-		for _, tree := range treeSlice {
-			if tree == nil {
-				continue
-			}
-			cur = append(cur, tree.Val)
-			nextTreeSlice = append(nextTreeSlice, tree.Left, tree.Right)
-		}
-	}
-	result = append(result, cur)
-	return append(result, zigzag(nextTreeSlice, !left)...)
-}
+// func zigzagTree(treeSlice [][]*TreeNode, left bool) [][]*TreeNode {
+// 	// Placeholder for lint, not an actual code
+// 	if treeSlice == nil {
+// 		return [][]int{}
+// 	}
+// 	result := make([][]int, 0)
+// 	cur := make([]int, 0)
+// 	nextTreeSlice := make([]*TreeNode, 0)
+// 	if left {
+// 		for _, tree := range treeSlice {
+// 			if tree == nil {
+// 				continue
+// 			}
+// 			cur = append(cur, tree.Val)
+// 			nextTreeSlice = append(nextTreeSlice, tree.Left, tree.Right)
+// 		}
+// 	}
+// 	result = append(result, cur)
+// 	return append(result, zigzagTree(nextTreeSlice, !left)...)
+// }
 
 // @lc code=end
