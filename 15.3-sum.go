@@ -36,44 +36,41 @@
 
 package leetcode
 
-import (
-	"sort"
-)
+import "sort"
 
 // @lc code=start
 
 func threeSum(nums []int) [][]int {
-
+	res := make([][]int, 0)
 	if len(nums) < 3 {
-		return [][]int{}
+		return res
 	}
 
-	numMap := make(map[int]int)
 	sort.Ints(nums)
-
-	for i, num := range nums {
-		numMap[num] = i
-	}
-
-	solution := make(map[[3]int]bool)
 	for i := 0; i < len(nums)-2; i++ {
-		for j := i + 1; j < len(nums)-1; j++ {
-			twoSum := nums[i] + nums[j]
-			checkVal := -twoSum
-			if index, ok := numMap[checkVal]; ok && index > i && index > j {
-				solution[[...]int{nums[i], nums[j], checkVal}] = true
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		for j, k := i+1, len(nums)-1; j < k; {
+			sum := nums[i] + nums[j] + nums[k]
+			if sum == 0 {
+				res = append(res, []int{nums[i], nums[j], nums[k]})
+				j++
+				k--
+				for j < k && nums[j] == nums[j-1] {
+					j++
+				}
+				for j < k && nums[k] == nums[k+1] {
+					k--
+				}
+			} else if sum < 0 {
+				k--
+			} else {
+				j++
 			}
 		}
 	}
-
-	sol := make([][]int, 0)
-	for array := range solution {
-		// Golang copies array to slice as address. This assignement is only for
-		// creating new address
-		arr := array
-		sol = append(sol, arr[:])
-	}
-	return sol
+	return res
 }
 
 // @lc code=end
