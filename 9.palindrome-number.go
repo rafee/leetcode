@@ -50,7 +50,7 @@
 package leetcode
 
 // @lc code=start
-func isPalindrome(x int) bool {
+func isPalindromeNum(x int) bool {
 	originalNumber := x
 	newNumber := 0
 	for x > 0 {

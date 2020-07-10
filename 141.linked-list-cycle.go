@@ -79,16 +79,14 @@ package leetcode
  */
 
 func hasCycle(head *ListNode) bool {
-	nodeMap := make(map[*ListNode]bool)
-	for ; ; head = head.Next {
-		if head == nil {
-			return false
-		}
-		if _, ok := nodeMap[head]; ok {
+	for fast, slow := head, head; fast != nil && fast.Next != nil; {
+		fast = fast.Next.Next
+		slow = slow.Next
+		if fast == slow {
 			return true
 		}
-		nodeMap[head] = true
 	}
+	return false
 }
 
 // @lc code=end

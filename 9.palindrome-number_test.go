@@ -51,7 +51,7 @@ package leetcode
 
 import "testing"
 
-func Test_isPalindrome(t *testing.T) {
+func Test_isPalindromeNum(t *testing.T) {
 	type args struct {
 		x int
 	}
@@ -64,8 +64,8 @@ func Test_isPalindrome(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isPalindrome(tt.args.x); got != tt.want {
-				t.Errorf("isPalindrome() = %v, want %v", got, tt.want)
+			if got := isPalindromeNum(tt.args.x); got != tt.want {
+				t.Errorf("isPalindromeNum() = %v, want %v", got, tt.want)
 			}
 		})
 	}
