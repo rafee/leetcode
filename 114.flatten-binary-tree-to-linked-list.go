@@ -15,7 +15,7 @@ package leetcode
  *     Right *TreeNode
  * }
  */
-func flatten(root *TreeNode) {
+func flattenBinaryTree(root *TreeNode) {
 	helpFlatten(root, nil)
 }
 

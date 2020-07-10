@@ -6,7 +6,9 @@
 
 package leetcode
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_lengthOfLIS(t *testing.T) {
 	type args struct {
@@ -27,6 +29,27 @@ func Test_lengthOfLIS(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := lengthOfLIS(tt.args.nums); got != tt.want {
 				t.Errorf("lengthOfLIS() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_getLISWithMin(t *testing.T) {
+	type args struct {
+		num  int
+		nums []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := getLISWithMin(tt.args.num, tt.args.nums); got != tt.want {
+				t.Errorf("getLISWithMin() = %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -86,10 +86,10 @@ func isCousins(root *TreeNode, x int, y int) bool {
 	if root.Val == x || root.Val == y {
 		return false
 	}
-	return bfs([]*TreeNode{root}, x, y)
+	return isCousinsHelper([]*TreeNode{root}, x, y)
 }
 
-func bfs(nodes []*TreeNode, x int, y int) bool {
+func isCousinsHelper(nodes []*TreeNode, x int, y int) bool {
 	if len(nodes) == 0 {
 		return false
 	}
@@ -115,7 +115,7 @@ func bfs(nodes []*TreeNode, x int, y int) bool {
 	if xp != -1 || yp != -1 {
 		return xp != yp && xp != -1 && yp != -1
 	}
-	return bfs(next, x, y)
+	return isCousinsHelper(next, x, y)
 }
 
 // @lc code=end

@@ -6,7 +6,9 @@
 
 package leetcode
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_isSelfCrossing(t *testing.T) {
 	type args struct {
@@ -37,6 +39,49 @@ func Test_isSelfCrossing(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := isSelfCrossing(tt.args.x); got != tt.want {
 				t.Errorf("isSelfCrossing() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_checkCross(t *testing.T) {
+	type args struct {
+		pos1 [2]int
+		pos2 [2]int
+		pos3 [2]int
+		pos4 [2]int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := checkCross(tt.args.pos1, tt.args.pos2, tt.args.pos3, tt.args.pos4); got != tt.want {
+				t.Errorf("checkCross() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_sign(t *testing.T) {
+	type args struct {
+		n int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := sign(tt.args.n); got != tt.want {
+				t.Errorf("sign() = %v, want %v", got, tt.want)
 			}
 		})
 	}
