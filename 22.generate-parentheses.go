@@ -37,21 +37,24 @@ package leetcode
 // @lc code=start
 func generateParenthesis(n int) []string {
 	result := make([]string, 0)
-	var str []byte
+	str := make([]byte, n*2)
 	generate(&result, str, 0, 0, n)
 	return result
 }
 
 func generate(result *[]string, str []byte, open, close, max int) {
-	if len(str) == max*2 {
+	next := open + close
+	if next == max*2 {
 		*result = append(*result, string(str))
 		return
 	}
 	if open < max {
-		generate(result, append(str, '('), open+1, close, max)
+		str[next] = '('
+		generate(result, str, open+1, close, max)
 	}
 	if close < open {
-		generate(result, append(str, ')'), open, close+1, max)
+		str[next] = ')'
+		generate(result, str, open, close+1, max)
 	}
 }
 
