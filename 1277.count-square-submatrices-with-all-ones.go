@@ -22,23 +22,12 @@ func countSquares(matrix [][]int) int {
 			if matrix[i][j] != 1 {
 				continue
 			}
-			matrix[i][j] = min3(matrix[i-1][j], matrix[i][j-1],
+			matrix[i][j] = min(matrix[i-1][j], matrix[i][j-1],
 				matrix[i-1][j-1]) + 1
 			count += matrix[i][j]
 		}
 	}
 	return count
-}
-
-func min3(x, y, z int) int {
-	if x < y {
-		if x < z {
-			return x
-		}
-	} else if y < z {
-		return y
-	}
-	return z
 }
 
 // @lc code=end

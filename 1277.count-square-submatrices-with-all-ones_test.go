@@ -35,25 +35,3 @@ func Test_countSquares(t *testing.T) {
 		})
 	}
 }
-
-func Test_min3(t *testing.T) {
-	type args struct {
-		x int
-		y int
-		z int
-	}
-	tests := []struct {
-		name string
-		args args
-		want int
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := min3(tt.args.x, tt.args.y, tt.args.z); got != tt.want {
-				t.Errorf("min3() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
