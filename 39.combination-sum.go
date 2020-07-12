@@ -81,4 +81,26 @@ func genCombSum(nums []int, target int) [][]int {
 	return solution
 }
 
+// func combinationSum(candidates []int, target int) [][]int {
+// 	sort.Ints(candidates)
+// 	result := make([][]int, 0)
+// 	solution := make([]int, 0)
+// 	helper(&result, solution, candidates, target)
+// 	return result
+// }
+
+// func helper(result *[][]int, solution []int, candidates []int, target int) {
+// 	if target == 0 {
+// 		*result = append(*result, solution)
+// 		return
+// 	}
+
+// 	for i, num := range candidates {
+// 		if num > target {
+// 			break
+// 		}
+// 		helper(result, append(solution, num), candidates[i:], target-num)
+// 	}
+// }
+
 // @lc code=end

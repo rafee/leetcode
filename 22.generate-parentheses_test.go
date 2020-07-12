@@ -63,7 +63,7 @@ func Test_generateParenthesis(t *testing.T) {
 	}
 }
 
-func Test_generate(t *testing.T) {
+func Test_helpGenParentheses(t *testing.T) {
 	type args struct {
 		result *[]string
 		str    []byte
@@ -79,7 +79,7 @@ func Test_generate(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			generate(tt.args.result, tt.args.str, tt.args.open, tt.args.close, tt.args.max)
+			helpGenParentheses(tt.args.result, tt.args.str, tt.args.open, tt.args.close, tt.args.max)
 		})
 	}
 }
