@@ -36,11 +36,16 @@ package leetcode
 func moveZeroes(nums []int) {
 	numLen := len(nums)
 	// nZ refers to the position of next non-zero element
-	for nZ, i := 0, 0; i < numLen; i++ {
+	var nZ int
+	for i := 0; i < numLen; i++ {
 		if nums[i] != 0 {
-			nums[i], nums[nZ] = nums[nZ], nums[i]
+			nums[nZ] = nums[i]
 			nZ++
 		}
+	}
+
+	for ; nZ < len(nums); nZ++ {
+		nums[nZ] = 0
 	}
 }
 
