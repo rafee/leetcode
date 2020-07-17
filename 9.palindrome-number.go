@@ -51,13 +51,13 @@ package leetcode
 
 // @lc code=start
 func isPalindromeNum(x int) bool {
-	originalNumber := x
-	newNumber := 0
+	o := x
+	n := 0
 	for x > 0 {
-		newNumber = (newNumber*10 + x%10)
+		n = (n*10 + x%10)
 		x /= 10
 	}
-	return originalNumber == newNumber
+	return o == n
 }
 
 // @lc code=end
