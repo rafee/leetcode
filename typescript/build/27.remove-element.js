@@ -5,7 +5,17 @@
  */
 // @lc code=start
 function removeElement(nums, val) {
-    return 0;
+    var end = nums.length;
+    for (var i = 0; i < end;) {
+        if (nums[i] == val) {
+            nums[i] = nums[end - 1];
+            end--;
+        }
+        else {
+            i++;
+        }
+    }
+    return end;
 }
 ;
 // @lc code=end

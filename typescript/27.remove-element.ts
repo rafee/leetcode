@@ -6,13 +6,17 @@
 
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
-    let p = 0;
-    for (const v of nums) {
-        if (v !== val) {
-            nums[p++] = v;
+    let end = nums.length;
+    for (let i = 0; i < end;) {
+        if (nums[i] == val) {
+            nums[i] = nums[end - 1]
+            end--
+        } else {
+            i++
         }
+
     }
-    return p;
+    return end;
 };
 
 // @lc code=end
