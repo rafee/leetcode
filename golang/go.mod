@@ -1,4 +1,4 @@
-module github.com/rafee/leetcode
+module github.com/rafee/leetcode/golang
 
 go 1.13
 
