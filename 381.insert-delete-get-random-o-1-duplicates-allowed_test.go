@@ -11,22 +11,6 @@ import (
 	"testing"
 )
 
-func TestConstructor(t *testing.T) {
-	tests := []struct {
-		name string
-		want RandomizedCollection
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := Constructor(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Constructor() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func TestRandomizedCollection_Insert(t *testing.T) {
 	type args struct {
 		val int
@@ -81,6 +65,22 @@ func TestRandomizedCollection_GetRandom(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := tt.this.GetRandom(); got != tt.want {
 				t.Errorf("RandomizedCollection.GetRandom() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestConstructorRandom(t *testing.T) {
+	tests := []struct {
+		name string
+		want RandomizedCollection
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := ConstructorRandom(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("ConstructorRandom() = %v, want %v", got, tt.want)
 			}
 		})
 	}

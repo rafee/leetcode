@@ -18,7 +18,7 @@ type RandomizedCollection struct {
 }
 
 /** Initialize your data structure here. */
-func Constructor() RandomizedCollection {
+func ConstructorRandom() RandomizedCollection {
 	col := new(RandomizedCollection)
 	col.collection = make(map[int][]int)
 	col.nums = make([]int, 0)
