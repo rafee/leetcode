@@ -5,8 +5,8 @@
  */
 // @lc code=start
 function removeElement(nums, val) {
-    var end = nums.length;
-    for (var i = 0; i < end;) {
+    let end = nums.length;
+    for (let i = 0; i < end;) {
         if (nums[i] == val) {
             nums[i] = nums[end - 1];
             end--;
