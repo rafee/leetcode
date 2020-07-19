@@ -4,7 +4,7 @@
  * [611] Valid Triangle Number
  */
 
-package leetcode
+package golang
 
 import "sort"
 

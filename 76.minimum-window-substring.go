@@ -34,7 +34,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func minWindow(s string, t string) string {

@@ -4,7 +4,7 @@
  * [901] Online Stock Span
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

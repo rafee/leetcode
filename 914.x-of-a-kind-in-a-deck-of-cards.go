@@ -4,7 +4,7 @@
  * [914] X of a Kind in a Deck of Cards
  */
 
-package leetcode
+package golang
 
 import "math"
 

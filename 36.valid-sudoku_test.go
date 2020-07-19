@@ -4,7 +4,7 @@
  * [36] Valid Sudoku
  */
 
-package leetcode
+package golang
 
 import "testing"
 

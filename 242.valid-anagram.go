@@ -4,7 +4,7 @@
  * [242] Valid Anagram
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isAnagram(s string, t string) bool {

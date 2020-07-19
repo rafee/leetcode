@@ -4,7 +4,7 @@
  * [381] Insert Delete GetRandom O(1) - Duplicates allowed
  */
 
-package leetcode
+package golang
 
 import (
 	"math/rand"

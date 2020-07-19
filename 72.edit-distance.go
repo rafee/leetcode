@@ -4,7 +4,7 @@
  * [72] Edit Distance
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func minDistance(word1 string, word2 string) int {

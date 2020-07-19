@@ -4,7 +4,7 @@
  * [103] Binary Tree Zigzag Level Order Traversal
  */
 
-package leetcode
+package golang
 
 // func Test_zigzagLevelOrder(t *testing.T) {
 // 	type args struct {

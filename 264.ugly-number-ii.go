@@ -4,7 +4,7 @@
  * [264] Ugly Number II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func nthUglyNumber(n int) int {

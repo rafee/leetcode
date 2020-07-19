@@ -4,7 +4,7 @@
  * [886] Possible Bipartition
  */
 
-package leetcode
+package golang
 
 import "testing"
 

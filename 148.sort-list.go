@@ -4,7 +4,7 @@
  * [148] Sort List
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

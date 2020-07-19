@@ -38,7 +38,7 @@
  * Output: 49
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 

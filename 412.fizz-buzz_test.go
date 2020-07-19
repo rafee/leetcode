@@ -4,7 +4,7 @@
  * [412] Fizz Buzz
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

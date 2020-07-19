@@ -4,7 +4,7 @@
  * [335] Self Crossing
  */
 
-package leetcode
+package golang
 
 import (
 	"testing"

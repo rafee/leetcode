@@ -4,7 +4,7 @@
  * [172] Factorial Trailing Zeroes
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func trailingZeroes(n int) int {

@@ -4,7 +4,7 @@
  * [787] Cheapest Flights Within K Stops
  */
 
-package leetcode
+package golang
 
 import "testing"
 

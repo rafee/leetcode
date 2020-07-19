@@ -4,7 +4,7 @@
  * [464] Can I Win
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func canIWin(maxChoosableInteger int, desiredTotal int) bool {

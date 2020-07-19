@@ -4,7 +4,7 @@
  * [118] Pascal's Triangle
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func genPascal(numRows int) [][]int {

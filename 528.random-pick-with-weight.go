@@ -4,7 +4,7 @@
  * [528] Random Pick with Weight
  */
 
-package leetcode
+package golang
 
 import "math/rand"
 

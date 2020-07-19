@@ -4,7 +4,7 @@
  * [402] Remove K Digits
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func removeKdigits(num string, k int) string {

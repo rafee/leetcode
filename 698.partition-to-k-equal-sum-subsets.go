@@ -4,7 +4,7 @@
  * [698] Partition to K Equal Sum Subsets
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func canPartitionKSubsets(nums []int, k int) bool {

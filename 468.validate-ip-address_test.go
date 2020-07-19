@@ -4,7 +4,7 @@
  * [468] Validate IP Address
  */
 
-package leetcode
+package golang
 
 import "testing"
 

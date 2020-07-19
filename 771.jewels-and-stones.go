@@ -45,7 +45,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func numJewelsInStones(J string, S string) int {

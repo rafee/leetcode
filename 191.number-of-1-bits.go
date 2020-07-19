@@ -4,7 +4,7 @@
  * [191] Number of 1 Bits
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func hammingWeight(num uint32) int {

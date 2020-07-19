@@ -52,7 +52,7 @@
  * test cases.
  */
 
-package leetcode
+package golang
 
 import "testing"
 

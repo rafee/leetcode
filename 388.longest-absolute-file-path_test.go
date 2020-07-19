@@ -4,7 +4,7 @@
  * [388] Longest Absolute File Path
  */
 
-package leetcode
+package golang
 
 import "testing"
 

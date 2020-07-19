@@ -30,7 +30,7 @@
  * Output: 0
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func rangeBitwiseAnd(m int, n int) int {

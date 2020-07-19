@@ -4,7 +4,7 @@
  * [332] Reconstruct Itinerary
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

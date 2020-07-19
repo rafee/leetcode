@@ -22,7 +22,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

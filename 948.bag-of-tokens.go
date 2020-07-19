@@ -4,7 +4,7 @@
  * [948] Bag of Tokens
  */
 
-package leetcode
+package golang
 
 import "sort"
 

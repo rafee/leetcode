@@ -4,7 +4,7 @@
  * [461] Hamming Distance
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -4,7 +4,7 @@
  * [1029] Two City Scheduling
  */
 
-package leetcode
+package golang
 
 import "sort"
 

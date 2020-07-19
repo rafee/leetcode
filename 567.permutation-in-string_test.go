@@ -4,7 +4,7 @@
  * [567] Permutation in String
  */
 
-package leetcode
+package golang
 
 import "testing"
 

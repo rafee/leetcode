@@ -4,7 +4,7 @@
  * [463] Island Perimeter
  */
 
-package leetcode
+package golang
 
 import "testing"
 

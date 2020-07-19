@@ -4,7 +4,7 @@
  * [629] K Inverse Pairs Array
  */
 
-package leetcode
+package golang
 
 import "testing"
 

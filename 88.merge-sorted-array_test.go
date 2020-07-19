@@ -4,7 +4,7 @@
  * [88] Merge Sorted Array
  */
 
-package leetcode
+package golang
 
 import "testing"
 

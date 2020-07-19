@@ -4,7 +4,7 @@
  * [207] Course Schedule
  */
 
-package leetcode
+package golang
 
 import "testing"
 

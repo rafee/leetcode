@@ -4,7 +4,7 @@
  * [402] Remove K Digits
  */
 
-package leetcode
+package golang
 
 import "testing"
 

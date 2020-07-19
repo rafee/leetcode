@@ -4,7 +4,7 @@
  * [1277] Count Square Submatrices with All Ones
  */
 
-package leetcode
+package golang
 
 import "testing"
 

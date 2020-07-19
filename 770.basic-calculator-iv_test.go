@@ -4,7 +4,7 @@
  * [770] Basic Calculator IV
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

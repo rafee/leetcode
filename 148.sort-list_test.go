@@ -4,7 +4,7 @@
  * [148] Sort List
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

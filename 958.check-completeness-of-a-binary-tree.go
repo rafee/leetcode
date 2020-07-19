@@ -4,7 +4,7 @@
  * [958] Check Completeness of a Binary Tree
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 // func isCompleteTree(root *TreeNode) bool {

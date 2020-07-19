@@ -45,7 +45,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func robII(nums []int) int {
@@ -64,4 +64,5 @@ func robII(nums []int) int {
 	}
 	return max(incPrePre, excPre)
 }
+
 // @lc code=end

@@ -4,7 +4,7 @@
  * [306] Additive Number
  */
 
-package leetcode
+package golang
 
 import (
 	"testing"

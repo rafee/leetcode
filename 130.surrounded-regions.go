@@ -47,7 +47,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import "sync"
 

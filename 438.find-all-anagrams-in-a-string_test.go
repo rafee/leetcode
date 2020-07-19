@@ -4,7 +4,7 @@
  * [438] Find All Anagrams in a String
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

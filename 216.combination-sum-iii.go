@@ -4,7 +4,7 @@
  * [216] Combination Sum III
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func combinationSum3(k int, n int) [][]int {

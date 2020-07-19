@@ -4,7 +4,7 @@
  * [226] Invert Binary Tree
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

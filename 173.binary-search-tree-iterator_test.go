@@ -4,7 +4,7 @@
  * [173] Binary Search Tree Iterator
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

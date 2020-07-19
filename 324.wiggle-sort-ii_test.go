@@ -4,7 +4,7 @@
  * [324] Wiggle Sort II
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -4,7 +4,7 @@
  * [118] Pascal's Triangle
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

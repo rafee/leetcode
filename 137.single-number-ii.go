@@ -4,7 +4,7 @@
  * [137] Single Number II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func singleNumber(nums []int) int {

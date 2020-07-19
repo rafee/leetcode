@@ -4,7 +4,7 @@
  * [910] Smallest Range II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func smallestRangeII(A []int, K int) int {

@@ -4,7 +4,7 @@
  * [105] Construct Binary Tree from Preorder and Inorder Traversal
  */
 
-package leetcode
+package golang
 
 import "math"
 

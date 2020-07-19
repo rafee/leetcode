@@ -4,7 +4,7 @@
  * [430] Flatten a Multilevel Doubly Linked List
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

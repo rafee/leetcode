@@ -4,7 +4,7 @@
  * [328] Odd Even Linked List
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

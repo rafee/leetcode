@@ -53,7 +53,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func wordBreak(s string, wordDict []string) bool {

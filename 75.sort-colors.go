@@ -4,7 +4,7 @@
  * [75] Sort Colors
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func sortColors(nums []int) {

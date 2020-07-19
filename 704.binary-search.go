@@ -47,7 +47,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func search(nums []int, target int) int {

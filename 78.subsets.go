@@ -36,7 +36,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func subsets(nums []int) [][]int {

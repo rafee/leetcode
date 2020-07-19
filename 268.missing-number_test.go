@@ -4,7 +4,7 @@
  * [268] Missing Number
  */
 
-package leetcode
+package golang
 
 import "testing"
 

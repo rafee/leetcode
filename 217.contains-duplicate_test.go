@@ -4,7 +4,7 @@
  * [217] Contains Duplicate
  */
 
-package leetcode
+package golang
 
 import "testing"
 

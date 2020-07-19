@@ -4,7 +4,7 @@
  * [189] Rotate Array
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func rotate(nums []int, k int) {

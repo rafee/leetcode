@@ -4,7 +4,7 @@
  * [171] Excel Sheet Column Number
  */
 
-package leetcode
+package golang
 
 import "testing"
 

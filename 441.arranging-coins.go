@@ -4,7 +4,7 @@
  * [441] Arranging Coins
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func arrangeCoins(n int) int {

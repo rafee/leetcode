@@ -4,7 +4,7 @@
  * [1170] Compare Strings by Frequency of the Smallest Character
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

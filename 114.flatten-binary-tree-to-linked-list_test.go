@@ -4,7 +4,7 @@
  * [114] Flatten Binary Tree to Linked List
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

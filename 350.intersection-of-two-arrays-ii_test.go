@@ -4,7 +4,7 @@
  * [350] Intersection of Two Arrays II
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

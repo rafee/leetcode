@@ -4,7 +4,7 @@
  * [662] Maximum Width of Binary Tree
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

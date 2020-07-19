@@ -43,7 +43,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func totalNQueens(n int) int {

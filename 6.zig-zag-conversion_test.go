@@ -4,7 +4,7 @@
  * [6] ZigZag Conversion
  */
 
-package leetcode
+package golang
 
 import "testing"
 

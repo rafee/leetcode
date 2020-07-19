@@ -62,7 +62,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func longestCommonSubsequence(text1 string, text2 string) int {

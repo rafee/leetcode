@@ -4,7 +4,7 @@
  * [190] Reverse Bits
  */
 
-package leetcode
+package golang
 
 import "testing"
 

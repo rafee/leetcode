@@ -4,7 +4,7 @@
  * [480] Sliding Window Median
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func medianSlidingWindow(nums []int, k int) []float64 {

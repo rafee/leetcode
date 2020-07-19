@@ -4,7 +4,7 @@
  * [380] Insert Delete GetRandom O(1)
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

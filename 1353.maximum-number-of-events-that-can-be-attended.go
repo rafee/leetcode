@@ -4,7 +4,7 @@
  * [1353] Maximum Number of Events That Can Be Attended
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func maxEvents(events [][]int) int {

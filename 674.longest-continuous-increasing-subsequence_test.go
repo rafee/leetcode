@@ -4,7 +4,7 @@
  * [674] Longest Continuous Increasing Subsequence
  */
 
-package leetcode
+package golang
 
 import "testing"
 

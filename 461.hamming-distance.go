@@ -4,7 +4,7 @@
  * [461] Hamming Distance
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func hammingDistance(x int, y int) int {

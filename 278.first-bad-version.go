@@ -39,7 +39,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

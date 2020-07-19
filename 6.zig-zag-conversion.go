@@ -4,7 +4,7 @@
  * [6] ZigZag Conversion
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func convert(s string, numRows int) string {

@@ -4,7 +4,7 @@
  * [75] Sort Colors
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

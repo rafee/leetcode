@@ -4,7 +4,7 @@
  * [918] Maximum Sum Circular Subarray
  */
 
-package leetcode
+package golang
 
 import "math"
 

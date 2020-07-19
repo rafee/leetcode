@@ -4,7 +4,7 @@
  * [190] Reverse Bits
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func reverseBits(num uint32) uint32 {

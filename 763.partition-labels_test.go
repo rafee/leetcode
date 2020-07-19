@@ -4,7 +4,7 @@
  * [763] Partition Labels
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

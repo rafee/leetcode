@@ -4,7 +4,7 @@
  * [231] Power of Two
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isPowerOfTwo(n int) bool {

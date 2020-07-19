@@ -74,7 +74,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func minScoreTriangulation(A []int) int {

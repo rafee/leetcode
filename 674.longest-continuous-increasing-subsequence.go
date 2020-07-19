@@ -4,7 +4,7 @@
  * [674] Longest Continuous Increasing Subsequence
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func findLengthOfLCIS(nums []int) int {

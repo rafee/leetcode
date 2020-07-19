@@ -4,7 +4,7 @@
  * [1411] Number of Ways to Paint N × 3 Grid
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func numOfWays(n int) int {

@@ -84,7 +84,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isMatch(s string, p string) bool {

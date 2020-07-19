@@ -52,7 +52,7 @@
  * test cases.
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isSubsequence(s string, t string) bool {

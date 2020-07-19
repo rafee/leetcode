@@ -52,7 +52,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import "sort"
 

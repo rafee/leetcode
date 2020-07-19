@@ -4,7 +4,7 @@
  * [35] Search Insert Position
  */
 
-package leetcode
+package golang
 
 import "testing"
 

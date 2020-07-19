@@ -30,7 +30,7 @@
  *
  */
 
-package leetcode
+package golang
 
 /*
  * Definition for singly-linked list.

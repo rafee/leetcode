@@ -4,7 +4,7 @@
  * [347] Top K Frequent Elements
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

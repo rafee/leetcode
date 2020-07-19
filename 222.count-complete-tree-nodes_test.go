@@ -4,7 +4,7 @@
  * [222] Count Complete Tree Nodes
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -1,4 +1,4 @@
-package leetcode
+package golang
 
 // TreeNode is a data structure for BST
 type TreeNode struct {

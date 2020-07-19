@@ -4,7 +4,7 @@
  * [1232] Check If It Is a Straight Line
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func checkStraightLine(coordinates [][]int) bool {

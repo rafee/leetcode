@@ -4,7 +4,7 @@
  * [438] Find All Anagrams in a String
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func findAnagrams(s string, p string) []int {

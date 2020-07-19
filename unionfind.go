@@ -1,4 +1,4 @@
-package leetcode
+package golang
 
 // UnionFind data type contains the root and size of object in UnionFind Data
 // structure

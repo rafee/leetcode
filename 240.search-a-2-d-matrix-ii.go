@@ -41,7 +41,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func searchMatrix(matrix [][]int, target int) bool {

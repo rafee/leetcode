@@ -4,7 +4,7 @@
  * [973] K Closest Points to Origin
  */
 
-package leetcode
+package golang
 
 import "container/heap"
 

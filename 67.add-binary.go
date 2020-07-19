@@ -4,7 +4,7 @@
  * [67] Add Binary
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func addBinary(a string, b string) string {

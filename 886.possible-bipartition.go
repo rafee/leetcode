@@ -4,7 +4,7 @@
  * [886] Possible Bipartition
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func possibleBipartition(N int, dislikes [][]int) bool {

@@ -4,7 +4,7 @@
  * [234] Palindrome Linked List
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isPalindrome(head *ListNode) bool {

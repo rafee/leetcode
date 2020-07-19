@@ -32,7 +32,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func generateParenthesis(n int) []string {

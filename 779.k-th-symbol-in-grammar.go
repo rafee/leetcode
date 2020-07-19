@@ -50,7 +50,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // https://leetcode.com/problems/k-th-symbol-in-grammar/discuss/113697/My-3-lines-C%2B%2B-recursive-solution
 

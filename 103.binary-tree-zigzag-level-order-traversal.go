@@ -4,7 +4,7 @@
  * [103] Binary Tree Zigzag Level Order Traversal
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

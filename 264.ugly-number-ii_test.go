@@ -4,7 +4,7 @@
  * [264] Ugly Number II
  */
 
-package leetcode
+package golang
 
 import "testing"
 

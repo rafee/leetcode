@@ -30,7 +30,7 @@
  * Output: 0
  */
 
-package leetcode
+package golang
 
 import "testing"
 

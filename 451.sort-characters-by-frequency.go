@@ -4,7 +4,7 @@
  * [451] Sort Characters By Frequency
  */
 
-package leetcode
+package golang
 
 import (
 	"container/heap"
@@ -17,14 +17,14 @@ func frequencySort(s string) string {
 		charMap[s[i]]++
 	}
 	pq := make(freqPQ, 0)
-	i:=0
+	i := 0
 	for key, count := range charMap {
 		item := &freqCount{
-			char: key,
-			freq: count,
+			char:  key,
+			freq:  count,
 			index: i,
 		}
-		heap.Push(&pq,item)
+		heap.Push(&pq, item)
 		i++
 	}
 	heap.Init(&pq)

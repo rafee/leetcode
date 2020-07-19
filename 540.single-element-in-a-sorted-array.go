@@ -4,7 +4,7 @@
  * [540] Single Element in a Sorted Array
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func singleNonDuplicate(nums []int) int {

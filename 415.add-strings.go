@@ -4,7 +4,7 @@
  * [415] Add Strings
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func addStrings(num1 string, num2 string) string {

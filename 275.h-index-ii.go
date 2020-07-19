@@ -4,7 +4,7 @@
  * [275] H-Index II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func hIndexII(citations []int) int {

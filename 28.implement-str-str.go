@@ -42,7 +42,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func strStr(haystack string, needle string) int {

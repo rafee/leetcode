@@ -4,7 +4,7 @@
  * [775] Global and Local Inversions
  */
 
-package leetcode
+package golang
 
 import "testing"
 

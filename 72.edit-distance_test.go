@@ -4,7 +4,7 @@
  * [72] Edit Distance
  */
 
-package leetcode
+package golang
 
 import "testing"
 

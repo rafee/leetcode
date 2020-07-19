@@ -40,7 +40,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func findMaxLength(nums []int) int {

@@ -46,7 +46,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func exist(board [][]byte, word string) bool {

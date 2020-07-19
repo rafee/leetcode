@@ -4,7 +4,7 @@
  * [629] K Inverse Pairs Array
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func kInversePairs(n int, k int) int {

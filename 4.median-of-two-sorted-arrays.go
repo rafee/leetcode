@@ -40,7 +40,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import "math"
 

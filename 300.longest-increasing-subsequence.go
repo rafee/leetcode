@@ -4,7 +4,7 @@
  * [300] Longest Increasing Subsequence
  */
 
-package leetcode
+package golang
 
 import "math"
 

@@ -4,7 +4,7 @@
  * [236] Lowest Common Ancestor of a Binary Tree
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**
@@ -25,7 +25,7 @@ package leetcode
 // 		_, left := finder(root.Left, p, q)
 // 		_, right := finder(root.Right, p, q)
 // 	}else if root==q{
-		
+
 // 	}
 // }
 

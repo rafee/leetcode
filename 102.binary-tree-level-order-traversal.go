@@ -4,7 +4,7 @@
  * [102] Binary Tree Level Order Traversal
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

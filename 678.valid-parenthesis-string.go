@@ -55,7 +55,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func checkValidString(s string) bool {

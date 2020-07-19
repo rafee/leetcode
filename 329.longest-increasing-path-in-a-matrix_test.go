@@ -4,7 +4,7 @@
  * [329] Longest Increasing Path in a Matrix
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

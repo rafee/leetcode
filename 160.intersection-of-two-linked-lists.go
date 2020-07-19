@@ -4,7 +4,7 @@
  * [160] Intersection of Two Linked Lists
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

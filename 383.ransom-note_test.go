@@ -37,7 +37,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import "testing"
 
@@ -53,12 +53,12 @@ func Test_canConstruct(t *testing.T) {
 	}{
 		{
 			name: "Test 1",
-			args: args{"a","b"},
+			args: args{"a", "b"},
 			want: false,
 		},
 		{
 			name: "Test 2",
-			args: args{"aa","aab"},
+			args: args{"aa", "aab"},
 			want: true,
 		},
 	}

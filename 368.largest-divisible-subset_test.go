@@ -4,7 +4,7 @@
  * [368] Largest Divisible Subset
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

@@ -4,7 +4,7 @@
  * [910] Smallest Range II
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -4,7 +4,7 @@
  * [518] Coin Change 2
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func change(amount int, coins []int) int {

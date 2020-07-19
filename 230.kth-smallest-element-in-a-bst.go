@@ -4,7 +4,7 @@
  * [230] Kth Smallest Element in a BST
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

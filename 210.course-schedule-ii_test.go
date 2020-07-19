@@ -4,7 +4,7 @@
  * [210] Course Schedule II
  */
 
-package leetcode
+package golang
 
 // func Test_findOrder(t *testing.T) {
 // 	type args struct {

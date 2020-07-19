@@ -4,7 +4,7 @@
  * [234] Palindrome Linked List
  */
 
-package leetcode
+package golang
 
 import "testing"
 

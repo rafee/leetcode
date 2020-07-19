@@ -4,7 +4,7 @@
  * [775] Global and Local Inversions
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isIdealPermutation(A []int) bool {

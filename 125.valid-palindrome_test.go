@@ -4,7 +4,7 @@
  * [125] Valid Palindrome
  */
 
-package leetcode
+package golang
 
 import (
 	"testing"

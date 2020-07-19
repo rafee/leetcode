@@ -50,7 +50,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import "testing"
 

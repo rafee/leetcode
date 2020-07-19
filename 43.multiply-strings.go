@@ -42,7 +42,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func multiply(num1 string, num2 string) string {

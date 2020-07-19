@@ -32,7 +32,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func permute(nums []int) [][]int {

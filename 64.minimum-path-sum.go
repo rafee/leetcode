@@ -33,7 +33,7 @@
  *
  */
 
-package leetcode
+package golang
 
 import "container/heap"
 

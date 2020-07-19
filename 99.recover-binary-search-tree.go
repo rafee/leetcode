@@ -4,7 +4,7 @@
  * [99] Recover Binary Search Tree
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

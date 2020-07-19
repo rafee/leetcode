@@ -36,7 +36,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func productExceptSelf(nums []int) []int {

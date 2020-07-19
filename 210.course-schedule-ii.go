@@ -4,7 +4,7 @@
  * [210] Course Schedule II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 

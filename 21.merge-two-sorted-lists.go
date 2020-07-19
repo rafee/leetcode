@@ -33,7 +33,7 @@
  * }
  */
 
-package leetcode
+package golang
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	resultNode := &ListNode{}

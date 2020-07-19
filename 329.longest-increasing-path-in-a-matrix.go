@@ -4,7 +4,7 @@
  * [329] Longest Increasing Path in a Matrix
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func longestIncreasingPath(matrix [][]int) int {

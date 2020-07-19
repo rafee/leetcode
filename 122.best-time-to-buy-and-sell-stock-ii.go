@@ -56,7 +56,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func maxProfitII(prices []int) int {

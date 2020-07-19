@@ -4,7 +4,7 @@
  * [567] Permutation in String
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func checkInclusion(s1 string, s2 string) bool {

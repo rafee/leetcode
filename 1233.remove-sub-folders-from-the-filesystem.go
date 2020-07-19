@@ -4,7 +4,7 @@
  * [1233] Remove Sub-Folders from the Filesystem
  */
 
-package leetcode
+package golang
 
 import (
 	"sort"

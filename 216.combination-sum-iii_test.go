@@ -4,7 +4,7 @@
  * [216] Combination Sum III
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

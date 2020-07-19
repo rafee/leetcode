@@ -4,7 +4,7 @@
  * [468] Validate IP Address
  */
 
-package leetcode
+package golang
 
 import (
 	"strings"
@@ -27,7 +27,7 @@ func checkIPv4(segments []string) string {
 			return "Neither"
 		}
 		checkRange4 := func(b int) bool {
-			return b < 10 && b >=0
+			return b < 10 && b >= 0
 		}
 		num := int(seg[0] - '0')
 		if !checkRange4(num) || (num == 0 && len(seg) > 1) {

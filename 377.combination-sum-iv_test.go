@@ -4,7 +4,7 @@
  * [377] Combination Sum IV
  */
 
-package leetcode
+package golang
 
 import "testing"
 

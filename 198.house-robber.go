@@ -44,7 +44,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func robI(nums []int) int {

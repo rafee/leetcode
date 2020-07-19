@@ -4,7 +4,7 @@
  * [997] Find the Town Judge
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func findJudge(N int, trust [][]int) int {

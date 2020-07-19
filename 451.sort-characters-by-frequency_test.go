@@ -4,7 +4,7 @@
  * [451] Sort Characters By Frequency
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

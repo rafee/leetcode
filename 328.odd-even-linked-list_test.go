@@ -4,7 +4,7 @@
  * [328] Odd Even Linked List
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

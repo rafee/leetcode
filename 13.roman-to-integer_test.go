@@ -82,7 +82,7 @@
 
 // @lc code=start
 
-package leetcode
+package golang
 
 import "testing"
 

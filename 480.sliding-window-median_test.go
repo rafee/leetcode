@@ -4,7 +4,7 @@
  * [480] Sliding Window Median
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

@@ -4,7 +4,7 @@
  * [137] Single Number II
  */
 
-package leetcode
+package golang
 
 import "testing"
 

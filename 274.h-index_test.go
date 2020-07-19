@@ -4,7 +4,7 @@
  * [274] H-Index
  */
 
-package leetcode
+package golang
 
 import "testing"
 

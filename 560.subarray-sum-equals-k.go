@@ -33,7 +33,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func subarraySum(nums []int, k int) int {

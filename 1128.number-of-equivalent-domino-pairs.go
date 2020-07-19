@@ -4,7 +4,7 @@
  * [1128] Number of Equivalent Domino Pairs
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func numEquivDominoPairs(dominoes [][]int) int {

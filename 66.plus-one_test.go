@@ -4,7 +4,7 @@
  * [66] Plus One
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

@@ -4,7 +4,7 @@
  * [306] Additive Number
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isAdditiveNumber(num string) bool {
@@ -36,4 +36,5 @@ func isAdditive(num1 string, num2 string, next string) bool {
 	}
 	return isAdditive(num2, curNum, nextStr)
 }
+
 // @lc code=end

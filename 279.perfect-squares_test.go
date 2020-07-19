@@ -4,7 +4,7 @@
  * [279] Perfect Squares
  */
 
-package leetcode
+package golang
 
 import "testing"
 

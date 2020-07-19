@@ -4,7 +4,7 @@
  * [821] Shortest Distance to a Character
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func shortestToChar(S string, C byte) []int {

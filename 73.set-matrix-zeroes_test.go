@@ -4,7 +4,7 @@
  * [73] Set Matrix Zeroes
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

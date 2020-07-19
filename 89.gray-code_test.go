@@ -4,7 +4,7 @@
  * [89] Gray Code
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

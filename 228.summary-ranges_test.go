@@ -4,7 +4,7 @@
  * [228] Summary Ranges
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

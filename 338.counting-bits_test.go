@@ -4,7 +4,7 @@
  * [338] Counting Bits
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

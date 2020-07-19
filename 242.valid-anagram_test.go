@@ -4,7 +4,7 @@
  * [242] Valid Anagram
  */
 
-package leetcode
+package golang
 
 import "testing"
 

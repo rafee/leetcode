@@ -4,7 +4,7 @@
  * [388] Longest Absolute File Path
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func lengthLongestPath(input string) int {

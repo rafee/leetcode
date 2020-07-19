@@ -4,7 +4,7 @@
  * [208] Implement Trie (Prefix Tree)
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

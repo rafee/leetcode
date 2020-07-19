@@ -4,7 +4,7 @@
  * [324] Wiggle Sort II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func wiggleSort(nums []int) {
@@ -17,7 +17,7 @@ func wiggleSort(nums []int) {
 			pre = nums[i]
 		} else {
 			if diff < 0 {
-				
+
 			}
 		}
 	}

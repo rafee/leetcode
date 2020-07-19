@@ -82,7 +82,7 @@
 
 // @lc code=start
 
-package leetcode
+package golang
 
 var lookupTable = map[rune]int{
 	'I': 1,

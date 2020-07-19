@@ -4,7 +4,7 @@
  * [225] Implement Stack using Queues
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 // type MyStack struct {

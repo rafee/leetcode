@@ -4,7 +4,7 @@
  * [334] Increasing Triplet Subsequence
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -4,7 +4,7 @@
  * [237] Delete Node in a Linked List
  */
 
-package leetcode
+package golang
 
 import "testing"
 

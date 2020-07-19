@@ -44,7 +44,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // recursively solve reverseString
 

@@ -4,7 +4,7 @@
  * [212] Word Search II
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 

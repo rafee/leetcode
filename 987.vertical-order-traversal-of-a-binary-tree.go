@@ -4,7 +4,7 @@
  * [987] Vertical Order Traversal of a Binary Tree
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 

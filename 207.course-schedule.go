@@ -4,7 +4,7 @@
  * [207] Course Schedule
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func canFinish(numCourses int, prerequisites [][]int) bool {
@@ -35,7 +35,7 @@ func nextCourse(graph [][]int, visited map[int]bool, node int) bool {
 	}
 	visited[node] = false
 	for _, nextNode := range graph[node] {
-		if !nextCourse(graph, visited, nextNode){
+		if !nextCourse(graph, visited, nextNode) {
 			return false
 		}
 	}

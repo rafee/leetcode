@@ -4,7 +4,7 @@
  * [373] Find K Pairs with Smallest Sums
  */
 
-package leetcode
+package golang
 
 import "container/heap"
 

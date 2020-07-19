@@ -4,7 +4,7 @@
  * [1344] Angle Between Hands of a Clock
  */
 
-package leetcode
+package golang
 
 import "testing"
 

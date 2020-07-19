@@ -4,7 +4,7 @@
  * [204] Count Primes
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -4,7 +4,7 @@
  * [986] Interval List Intersections
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

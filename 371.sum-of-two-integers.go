@@ -4,7 +4,7 @@
  * [371] Sum of Two Integers
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func getSum(a int, b int) int {

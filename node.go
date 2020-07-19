@@ -1,4 +1,4 @@
-package leetcode
+package golang
 
 //  Definition for a Node.
 type Node struct {

@@ -31,7 +31,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func partition(s string) [][]string {

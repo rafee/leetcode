@@ -4,7 +4,7 @@
  * [770] Basic Calculator IV
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func basicCalculatorIV(expression string, evalvars []string, evalints []int) []string {

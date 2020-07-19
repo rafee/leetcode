@@ -4,7 +4,7 @@
  * [91] Decode Ways
  */
 
-package leetcode
+package golang
 
 import "testing"
 

@@ -63,7 +63,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func divisorGame(N int) bool {

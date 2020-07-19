@@ -30,7 +30,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func twoSum(nums []int, target int) []int {

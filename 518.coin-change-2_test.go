@@ -4,7 +4,7 @@
  * [518] Coin Change 2
  */
 
-package leetcode
+package golang
 
 import "testing"
 

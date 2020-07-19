@@ -4,7 +4,7 @@
  * [986] Interval List Intersections
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func intervalIntersection(A [][]int, B [][]int) [][]int {

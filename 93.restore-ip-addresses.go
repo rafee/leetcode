@@ -4,7 +4,7 @@
  * [93] Restore IP Addresses
  */
 
-package leetcode
+package golang
 
 import (
 	"strconv"

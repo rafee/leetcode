@@ -4,7 +4,7 @@
  * [332] Reconstruct Itinerary
  */
 
-package leetcode
+package golang
 
 import (
 	"fmt"
@@ -36,7 +36,7 @@ func visitAirport(src string, destMap map[string][]string, pre []string,
 	ttl int) []string {
 	curRes := append(pre, src)
 	destinations := make([]string, len(destMap[src]))
-	fmt.Println(curRes,ttl,destinations)
+	fmt.Println(curRes, ttl, destinations)
 	copy(destinations, destMap[src])
 	if len(destinations) == 0 {
 		if ttl != 0 {

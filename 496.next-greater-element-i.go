@@ -4,7 +4,7 @@
  * [496] Next Greater Element I
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func nextGreaterElement(nums1 []int, nums2 []int) []int {

@@ -4,7 +4,7 @@
  * [763] Partition Labels
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func partitionLabels(S string) []int {

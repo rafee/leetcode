@@ -61,7 +61,7 @@
  * }
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func removeDuplicates(nums []int) int {

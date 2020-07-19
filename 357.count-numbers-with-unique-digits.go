@@ -4,7 +4,7 @@
  * [357] Count Numbers with Unique Digits
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func countNumbersWithUniqueDigits(n int) int {

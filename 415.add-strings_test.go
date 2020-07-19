@@ -4,7 +4,7 @@
  * [415] Add Strings
  */
 
-package leetcode
+package golang
 
 import "testing"
 

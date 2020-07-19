@@ -4,7 +4,7 @@
  * [464] Can I Win
  */
 
-package leetcode
+package golang
 
 import (
 	"testing"

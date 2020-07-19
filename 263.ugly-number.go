@@ -48,7 +48,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func isUgly(num int) bool {

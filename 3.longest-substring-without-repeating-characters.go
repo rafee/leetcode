@@ -50,7 +50,7 @@
  *
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func lengthOfLongestSubstring(s string) int {

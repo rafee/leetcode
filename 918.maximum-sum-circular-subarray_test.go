@@ -4,7 +4,7 @@
  * [918] Maximum Sum Circular Subarray
  */
 
-package leetcode
+package golang
 
 import "testing"
 
@@ -24,17 +24,17 @@ func Test_maxSubarraySumCircular(t *testing.T) {
 		},
 		{
 			name: "Test 2",
-			args: args{[]int{5,-3,5}},
+			args: args{[]int{5, -3, 5}},
 			want: 10,
 		},
 		{
 			name: "Test 3",
-			args: args{[]int{3,-1,2,-1}},
+			args: args{[]int{3, -1, 2, -1}},
 			want: 4,
 		},
 		{
 			name: "Test 4",
-			args: args{[]int{3,-2,2,-3}},
+			args: args{[]int{3, -2, 2, -3}},
 			want: 3,
 		},
 	}

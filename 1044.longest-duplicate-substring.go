@@ -4,7 +4,7 @@
  * [1044] Longest Duplicate Substring
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 func longestDupSubstring(str string) string {

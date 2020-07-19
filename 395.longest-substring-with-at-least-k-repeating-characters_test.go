@@ -4,7 +4,7 @@
  * [395] Longest Substring with At Least K Repeating Characters
  */
 
-package leetcode
+package golang
 
 import "testing"
 

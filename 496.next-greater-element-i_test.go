@@ -4,7 +4,7 @@
  * [496] Next Greater Element I
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

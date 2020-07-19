@@ -4,7 +4,7 @@
  * [406] Queue Reconstruction by Height
  */
 
-package leetcode
+package golang
 
 import (
 	"reflect"

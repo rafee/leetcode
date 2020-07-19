@@ -4,7 +4,7 @@
  * [129] Sum Root to Leaf Numbers
  */
 
-package leetcode
+package golang
 
 // @lc code=start
 /**

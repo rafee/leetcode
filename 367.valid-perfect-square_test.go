@@ -4,7 +4,7 @@
  * [367] Valid Perfect Square
  */
 
-package leetcode
+package golang
 
 import "testing"
 
