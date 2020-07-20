@@ -1,12 +1,9 @@
 {
-  "name": "typescript",
+  "name": "leetcode",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "mocha --require ts-node/register test/**/*.ts"
