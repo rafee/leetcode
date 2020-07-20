@@ -10,6 +10,10 @@ function convertToTitle(n: number): string {
     while (n > 0) {
         let digit = n % 26
         n = Math.floor(n / 26)
+        if (digit === 0) {
+            n--
+            digit = 26
+        }
         let char = String.fromCharCode(64 + digit)
         result = char + result
     }
