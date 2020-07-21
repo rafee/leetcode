@@ -22,7 +22,7 @@
 function levelOrderBottom(root: TreeNode | null): number[][] {
     let trees: (TreeNode | null)[] = [root]
     return helpLevelOrderBottomRecursive(trees).slice(1)
-};
+}
 
 function helpLevelOrderBottomRecursive(trees: (TreeNode | null)[]): number[][] {
     if (trees.length == 0) {
@@ -30,7 +30,7 @@ function helpLevelOrderBottomRecursive(trees: (TreeNode | null)[]): number[][] {
     }
     let nextTrees: (TreeNode | null)[] = []
     let nums: number[] = []
-    trees.forEach(node => {
+    trees.forEach((node) => {
         if (node !== null) {
             nums.push(node.val)
             nextTrees.push(node.left, node.right)
@@ -41,4 +41,3 @@ function helpLevelOrderBottomRecursive(trees: (TreeNode | null)[]): number[][] {
     return result
 }
 // @lc code=end
-

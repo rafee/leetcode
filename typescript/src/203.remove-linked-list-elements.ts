@@ -33,6 +33,5 @@ function removeElements(head: ListNode | null, val: number): ListNode | null {
         }
     }
     return head
-};
+}
 // @lc code=end
-

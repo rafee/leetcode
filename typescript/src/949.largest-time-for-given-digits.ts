@@ -6,7 +6,8 @@
 
 // @lc code=start
 function largestTimeFromDigits(A: number[]): string {
-    let maxHour = -1, maxMinute = -1
+    let maxHour = -1,
+        maxMinute = -1
     for (let i = 0; i < A.length; i++) {
         for (let j = 0; j < A.length; j++) {
             if (i === j) {
@@ -39,11 +40,10 @@ function largestTimeFromDigits(A: number[]): string {
         }
     }
     if (maxHour == -1 || maxMinute == -1) {
-        return ""
+        return ''
     }
-    let hourString = (`00${maxHour}`).slice(-2)
-    let minuteString = (`00${maxMinute}`).slice(-2)
+    let hourString = `00${maxHour}`.slice(-2)
+    let minuteString = `00${maxMinute}`.slice(-2)
     return `${hourString}:${minuteString}`
-};
+}
 // @lc code=end
-

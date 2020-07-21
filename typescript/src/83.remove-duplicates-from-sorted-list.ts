@@ -4,7 +4,6 @@
  * [83] Remove Duplicates from Sorted List
  */
 
-
 // @lc code=start
 
 function deleteDuplicates(head: ListNode | null): ListNode | null {
@@ -20,6 +19,5 @@ function deleteDuplicates(head: ListNode | null): ListNode | null {
         }
     }
     return head
-};
+}
 // @lc code=end
-

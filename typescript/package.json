@@ -1,14 +1,22 @@
 {
-  "name": "leetcode",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "mocha --require ts-node/register test/**/*.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "leetcode",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "2.0.5"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    },
+    "scripts": {
+        "test": "mocha --require ts-node/register test/**/*.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }

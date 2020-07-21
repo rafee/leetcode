@@ -22,7 +22,7 @@
 function isBalanced(root: TreeNode | null): boolean {
     const [, isBal] = helpIsBalanced(root)
     return isBal
-};
+}
 
 function helpIsBalanced(root: TreeNode | null): [number, boolean] {
     if (root == null) {
@@ -36,4 +36,3 @@ function helpIsBalanced(root: TreeNode | null): [number, boolean] {
     return [Math.max(lDepth, rDepth) + 1, lBal && rBal]
 }
 // @lc code=end
-

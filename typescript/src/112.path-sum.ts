@@ -19,14 +19,22 @@
  * }
  */
 
-function hasPathSum({ root, sum }: { root: TreeNode | null; sum: number }): boolean {
+function hasPathSum({
+    root,
+    sum,
+}: {
+    root: TreeNode | null
+    sum: number
+}): boolean {
     if (root === null) {
         return false
     }
     if (root.left === null && root.right === null) {
         return root.val === sum
     }
-    return hasPathSum({ root: root.left, sum: sum - root.val }) || hasPathSum({ root: root.right, sum: sum - root.val })
-};
+    return (
+        hasPathSum({ root: root.left, sum: sum - root.val }) ||
+        hasPathSum({ root: root.right, sum: sum - root.val })
+    )
+}
 // @lc code=end
-

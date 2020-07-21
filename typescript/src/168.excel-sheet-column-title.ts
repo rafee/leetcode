@@ -6,7 +6,7 @@
 
 // @lc code=start
 function convertToTitle(n: number): string {
-    let result = ""
+    let result = ''
     while (n > 0) {
         let digit = n % 26
         n = Math.floor(n / 26)
@@ -18,6 +18,5 @@ function convertToTitle(n: number): string {
         result = char + result
     }
     return result
-};
+}
 // @lc code=end
-

@@ -17,6 +17,5 @@ function twoSumSorted(numbers: number[], target: number): number[] {
         }
     }
     return []
-};
+}
 // @lc code=end
-

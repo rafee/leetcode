@@ -28,6 +28,5 @@ function minDepth(root: TreeNode | null): number {
         return minDepth(root.left) + 1
     }
     return Math.min(minDepth(root.left), minDepth(root.right)) + 1
-};
+}
 // @lc code=end
-
