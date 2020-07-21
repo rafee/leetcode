@@ -64,8 +64,7 @@ func exist(board [][]byte, word string) bool {
 	return false
 }
 
-func chkExist(board [][]byte, x, y int,
-	byteArr []byte) bool {
+func chkExist(board [][]byte, x, y int, byteArr []byte) bool {
 	posValid := chkValidPos(board, x, y)
 	if len(byteArr) == 1 {
 		if posValid {
@@ -76,12 +75,11 @@ func chkExist(board [][]byte, x, y int,
 	if posValid {
 		if tmp := board[x][y]; board[x][y] == byteArr[0] {
 			board[x][y] = '@'
-			right := chkExist(board, x, y+1, byteArr[1:])
-			left := chkExist(board, x, y-1, byteArr[1:])
-			down := chkExist(board, x+1, y, byteArr[1:])
-			up := chkExist(board, x-1, y, byteArr[1:])
-			if right || left || up || down {
-				return true
+			next := [][]int{{x, y + 1}, {x, y - 1}, {x + 1, y}, {x - 1, y}}
+			for _, pos := range next {
+				if chkExist(board, pos[0], pos[1], byteArr[1:]) {
+					return true
+				}
 			}
 			board[x][y] = tmp
 		}
