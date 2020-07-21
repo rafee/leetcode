@@ -51,10 +51,11 @@ package golang
 // @lc code=start
 func exist(board [][]byte, word string) bool {
 	X, Y := len(board), len(board[0])
+	bWord := []byte(word)
 
 	for i := 0; i < X; i++ {
 		for j := 0; j < Y; j++ {
-			if chkExist(board, word, i, j, X, Y) {
+			if chkExist(board, i, j, bWord) {
 				return true
 			}
 		}
@@ -63,31 +64,33 @@ func exist(board [][]byte, word string) bool {
 	return false
 }
 
-func chkExist(board [][]byte, word string, x, y, X, Y int) bool {
-	posValid := chkValidPos(board, x, y, X, Y)
-	if len(word) == 1 {
+func chkExist(board [][]byte, x, y int,
+	byteArr []byte) bool {
+	posValid := chkValidPos(board, x, y)
+	if len(byteArr) == 1 {
 		if posValid {
-			return board[x][y] == word[0]
+			return board[x][y] == byteArr[0]
 		}
 	}
 
 	if posValid {
-		if tmp := board[x][y]; board[x][y] == word[0] {
+		if tmp := board[x][y]; board[x][y] == byteArr[0] {
 			board[x][y] = '@'
-			right := chkExist(board, word[1:], x, y+1, X, Y)
-			left := chkExist(board, word[1:], x, y-1, X, Y)
-			down := chkExist(board, word[1:], x+1, y, X, Y)
-			up := chkExist(board, word[1:], x-1, y, X, Y)
-			board[x][y] = tmp
+			right := chkExist(board, x, y+1, byteArr[1:])
+			left := chkExist(board, x, y-1, byteArr[1:])
+			down := chkExist(board, x+1, y, byteArr[1:])
+			up := chkExist(board, x-1, y, byteArr[1:])
 			if right || left || up || down {
 				return true
 			}
+			board[x][y] = tmp
 		}
 	}
 	return false
 }
 
-func chkValidPos(board [][]byte, x, y, X, Y int) bool {
+func chkValidPos(board [][]byte, x, y int) bool {
+	X, Y := len(board), len(board[0])
 	if x < 0 || x >= X || y < 0 || y >= Y {
 		return false
 	}
