@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "sourceMap": true,
-        "outDir": "build",
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "strict": true
-    },
-    "include": ["./src"],
-    "exclude": ["./node_modules", "./build"]
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "dist",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
+  },
+  "include": ["./src"],
+  "exclude": ["./node_modules", "dist"]
 }
