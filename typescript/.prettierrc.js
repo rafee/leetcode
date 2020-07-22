@@ -1,5 +1,7 @@
-export const trailingComma = 'es5'
-export const printWidth = 100
-export const tabWidth = 4
-export const singleQuote = true
-export const semi = false
+module.exports = {
+    trailingComma: 'es5',
+    tabWidth: 4,
+    printWidth: 80,
+    semi: false,
+    singleQuote: true,
+}
