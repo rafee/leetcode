@@ -6,31 +6,31 @@
 
 // @lc code=start
 class MinStack {
-  nums: number[] = []
-  mins: number[] = []
-  constructor() {}
+    nums: number[] = []
+    mins: number[] = []
+    constructor() {}
 
-  push(x: number): void {
-    if (this.mins.length === 0 || x <= this.getMin()) {
-      this.mins.push(x)
+    push(x: number): void {
+        if (this.mins.length === 0 || x <= this.getMin()) {
+            this.mins.push(x)
+        }
+        this.nums.push(x)
     }
-    this.nums.push(x)
-  }
 
-  pop(): void {
-    if (this.getMin() === this.top()) {
-      this.mins.pop()
+    pop(): void {
+        if (this.getMin() === this.top()) {
+            this.mins.pop()
+        }
+        this.nums.pop()
     }
-    this.nums.pop()
-  }
 
-  top(): number {
-    return this.nums[this.nums.length - 1]
-  }
+    top(): number {
+        return this.nums[this.nums.length - 1]
+    }
 
-  getMin(): number {
-    return this.mins[this.mins.length - 1]
-  }
+    getMin(): number {
+        return this.mins[this.mins.length - 1]
+    }
 }
 
 /**

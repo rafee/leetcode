@@ -19,13 +19,7 @@
  * }
  */
 
-function hasPathSum({
-    root,
-    sum,
-}: {
-    root: TreeNode | null
-    sum: number
-}): boolean {
+function hasPathSum({ root, sum }: { root: TreeNode | null; sum: number }): boolean {
     if (root === null) {
         return false
     }
