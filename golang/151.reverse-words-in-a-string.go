@@ -10,19 +10,11 @@ import "strings"
 
 // @lc code=start
 func reverseWords(s string) string {
-	var sb strings.Builder
-	segs := strings.Split(s, " ")
-	for j := len(segs) - 1; j >= 0; j-- {
-		if segs[j] == "" {
-			continue
-		}
-		sb.WriteString(segs[j])
-		sb.WriteString(" ")
+	segs := strings.Fields(s)
+	for i := 0; i < len(segs)/2; i++ {
+		segs[i], segs[len(segs)-i-1] = segs[len(segs)-i-1], segs[i]
 	}
-	if sb.Len() != 0 {
-		return sb.String()[:sb.Len()-1]
-	}
-	return sb.String()
+	return strings.Join(segs, " ")
 }
 
 // @lc code=end
