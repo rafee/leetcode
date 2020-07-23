@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /*
  * @lc app=leetcode id=203 lang=typescript
  *
@@ -19,19 +20,19 @@
 
 function removeElements(head: ListNode | null, val: number): ListNode | null {
   while (head !== null && head.val === val) {
-    head = head.next;
+    head = head.next
   }
   if (head === null) {
-    return head;
+    return head
   }
-  let curNode = head;
+  let curNode = head
   while (curNode.next !== null) {
     if (curNode.next.val === val) {
-      curNode.next = curNode.next.next;
+      curNode.next = curNode.next.next
     } else {
-      curNode = curNode.next;
+      curNode = curNode.next
     }
   }
-  return head;
+  return head
 }
 // @lc code=end

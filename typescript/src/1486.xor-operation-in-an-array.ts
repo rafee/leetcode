@@ -6,11 +6,12 @@
 
 // @lc code=start
 function xorOperation(n: number, start: number): number {
-  let num = start;
+  let num = start
   for (let i = 1; i < n; i++) {
-    start += 2;
-    num ^= start;
+    // start += 2;
+    // eslint-disable-next-line no-bitwise
+    num ^= start + 2 * i
   }
-  return num;
+  return num
 }
 // @lc code=end

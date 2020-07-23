@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 /*
  * @lc app=leetcode id=155 lang=typescript
  *
@@ -10,28 +11,29 @@ class MinStack {
 
   mins: number[] = []
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
   push(x: number): void {
     if (this.mins.length === 0 || x <= this.getMin()) {
-      this.mins.push(x);
+      this.mins.push(x)
     }
-    this.nums.push(x);
+    this.nums.push(x)
   }
 
   pop(): void {
     if (this.getMin() === this.top()) {
-      this.mins.pop();
+      this.mins.pop()
     }
-    this.nums.pop();
+    this.nums.pop()
   }
 
   top(): number {
-    return this.nums[this.nums.length - 1];
+    return this.nums[this.nums.length - 1]
   }
 
   getMin(): number {
-    return this.mins[this.mins.length - 1];
+    return this.mins[this.mins.length - 1]
   }
 }
 

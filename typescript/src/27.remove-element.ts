@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /*
  * @lc app=leetcode id=27 lang=typescript
  *
@@ -6,16 +7,16 @@
 
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
-  let end = nums.length;
-  for (let i = 0; i < end;) {
+  let end = nums.length
+  for (let i = 0; i < end; ) {
     if (nums[i] === val) {
-      nums[i] = nums[end - 1];
-      end--;
+      nums[i] = nums[end - 1]
+      end--
     } else {
-      i++;
+      i++
     }
   }
-  return end;
+  return end
 }
 
 // @lc code=end

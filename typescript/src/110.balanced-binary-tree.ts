@@ -19,20 +19,20 @@
  * }
  */
 
-function isBalanced(root: TreeNode | null): boolean {
-  const [, isBal] = helpIsBalanced(root);
-  return isBal;
-}
-
 function helpIsBalanced(root: TreeNode | null): [number, boolean] {
   if (root == null) {
-    return [0, true];
+    return [0, true]
   }
-  const [lDepth, lBal] = helpIsBalanced(root.left);
-  const [rDepth, rBal] = helpIsBalanced(root.right);
+  const [lDepth, lBal] = helpIsBalanced(root.left)
+  const [rDepth, rBal] = helpIsBalanced(root.right)
   if (Math.abs(rDepth - lDepth) > 1) {
-    return [0, false];
+    return [0, false]
   }
-  return [Math.max(lDepth, rDepth) + 1, lBal && rBal];
+  return [Math.max(lDepth, rDepth) + 1, lBal && rBal]
+}
+
+function isBalanced(root: TreeNode | null): boolean {
+  const [, isBal] = helpIsBalanced(root)
+  return isBal
 }
 // @lc code=end

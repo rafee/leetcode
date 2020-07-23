@@ -1,7 +1,12 @@
 module.exports = {
-  extends: ['airbnb', 'plugin:@typescript-eslint/recommended'],
+  extends: [
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+  ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint'],
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -20,5 +25,7 @@ module.exports = {
       { devDependencies: ['**/test.tsx', '**/test.ts'] },
     ],
     '@typescript-eslint/indent': [2, 2],
+    'no-plusplus': 0,
+    '@typescript-eslint/no-unused-vars': 'off',
   },
-};
+}

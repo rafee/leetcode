@@ -19,25 +19,25 @@
  * }
  */
 
-function levelOrderBottom(root: TreeNode | null): number[][] {
-  const trees: (TreeNode | null)[] = [root];
-  return helpLevelOrderBottomRecursive(trees).slice(1);
-}
-
 function helpLevelOrderBottomRecursive(trees: (TreeNode | null)[]): number[][] {
-  if (trees.length == 0) {
-    return [];
+  if (trees.length === 0) {
+    return []
   }
-  const nextTrees: (TreeNode | null)[] = [];
-  const nums: number[] = [];
+  const nextTrees: (TreeNode | null)[] = []
+  const nums: number[] = []
   trees.forEach((node) => {
     if (node !== null) {
-      nums.push(node.val);
-      nextTrees.push(node.left, node.right);
+      nums.push(node.val)
+      nextTrees.push(node.left, node.right)
     }
-  });
-  const result = helpLevelOrderBottomRecursive(nextTrees);
-  result.push(nums);
-  return result;
+  })
+  const result = helpLevelOrderBottomRecursive(nextTrees)
+  result.push(nums)
+  return result
+}
+
+function levelOrderBottom(root: TreeNode | null): number[][] {
+  const trees: (TreeNode | null)[] = [root]
+  return helpLevelOrderBottomRecursive(trees).slice(1)
 }
 // @lc code=end

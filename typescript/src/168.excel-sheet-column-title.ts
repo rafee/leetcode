@@ -6,17 +6,18 @@
 
 // @lc code=start
 function convertToTitle(n: number): string {
-  let result = '';
-  while (n > 0) {
-    let digit = n % 26;
-    n = Math.floor(n / 26);
+  let result = ''
+  let num = n
+  while (num > 0) {
+    let digit = num % 26
+    num = Math.floor(num / 26)
     if (digit === 0) {
-      n--;
-      digit = 26;
+      num -= 1
+      digit = 26
     }
-    const char = String.fromCharCode(64 + digit);
-    result = char + result;
+    const char = String.fromCharCode(64 + digit)
+    result = char + result
   }
-  return result;
+  return result
 }
 // @lc code=end

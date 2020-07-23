@@ -6,15 +6,16 @@
 
 // @lc code=start
 function twoSumSorted(numbers: number[], target: number): number[] {
-  const numMap: Map<number, number> = new Map();
+  const numMap: Map<number, number> = new Map()
   for (let i = 0; i < numbers.length; i++) {
     if (numMap.has(numbers[i])) {
-      return [numMap.get(numbers[i])!, i + 1];
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      return [numMap.get(numbers[i])!, i + 1]
       // } else if (numbers[i] > target - numbers[i - 1]) {
       //     break
     }
-    numMap.set(target - numbers[i], i + 1);
+    numMap.set(target - numbers[i], i + 1)
   }
-  return [];
+  return []
 }
 // @lc code=end

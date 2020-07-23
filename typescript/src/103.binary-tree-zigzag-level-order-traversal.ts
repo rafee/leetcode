@@ -19,15 +19,6 @@
  * }
  */
 
-function zigzagLevelOrder(root: TreeNode | null): number[][] {
-  const result: number[][] = [];
-  helpZigzagLevelOrder({
-    root,
-    depth: 0,
-    result,
-  });
-  return result;
-}
 function helpZigzagLevelOrder({
   root,
   depth,
@@ -38,25 +29,35 @@ function helpZigzagLevelOrder({
   result: number[][]
 }): void {
   if (root === null) {
-    return;
+    return
   }
   if (result.length === depth) {
-    result.push([]);
+    result.push([])
   }
-  if (depth % 2 == 0) {
-    result[depth].push(root.val);
+  if (depth % 2 === 0) {
+    result[depth].push(root.val)
   } else {
-    result[depth].unshift(root.val);
+    result[depth].unshift(root.val)
   }
   helpZigzagLevelOrder({
     root: root.left,
     depth: depth + 1,
     result,
-  });
+  })
   helpZigzagLevelOrder({
     root: root.right,
     depth: depth + 1,
     result,
-  });
+  })
+}
+
+function zigzagLevelOrder(root: TreeNode | null): number[][] {
+  const result: number[][] = []
+  helpZigzagLevelOrder({
+    root,
+    depth: 0,
+    result,
+  })
+  return result
 }
 // @lc code=end

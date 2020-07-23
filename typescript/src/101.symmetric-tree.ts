@@ -19,13 +19,6 @@
  * }
  */
 
-function isSymmetric(root: TreeNode | null): boolean {
-  if (root === null) {
-    return true;
-  }
-  return helpIsSymmetricRecursive({ left: root.left, right: root.right });
-}
-
 function helpIsSymmetricRecursive({
   left,
   right,
@@ -34,14 +27,22 @@ function helpIsSymmetricRecursive({
   right: TreeNode | null
 }): boolean {
   if (!left || !right) {
-    return left == right;
+    return left === right
   }
   if (left.val !== right.val) {
-    return false;
+    return false
   }
   return (
-    helpIsSymmetricRecursive({ left: left.left, right: right.right })
-        && helpIsSymmetricRecursive({ left: left.right, right: right.left })
-  );
+    helpIsSymmetricRecursive({ left: left.left, right: right.right }) &&
+    helpIsSymmetricRecursive({ left: left.right, right: right.left })
+  )
 }
+
+function isSymmetric(root: TreeNode | null): boolean {
+  if (root === null) {
+    return true
+  }
+  return helpIsSymmetricRecursive({ left: root.left, right: root.right })
+}
+
 // @lc code=end

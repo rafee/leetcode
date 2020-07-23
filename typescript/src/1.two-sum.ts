@@ -6,15 +6,17 @@
 
 // @lc code=start
 function twoSum(nums: number[], target: number): number[] {
-  const dict: Map<number, number> = new Map();
+  const dict: Map<number, number> = new Map()
 
   for (let i = 0; i < nums.length; i++) {
-    if (dict.has(nums[i])) {
-      return [dict.get(nums[i])!, i];
+    const preLoc = dict.has(nums[i])
+    if (!preLoc) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      return [dict.get(nums[i])!, i]
     }
-    dict.set(target - nums[i], i);
+    dict.set(target - nums[i], i)
   }
 
-  return [];
+  return []
 }
 // @lc code=end
