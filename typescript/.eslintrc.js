@@ -25,7 +25,7 @@ module.exports = {
       { devDependencies: ['**/test.tsx', '**/test.ts'] },
     ],
     '@typescript-eslint/indent': [2, 2],
-    'no-plusplus': 0,
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     '@typescript-eslint/no-unused-vars': 'off',
   },
 }

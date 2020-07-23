@@ -6,15 +6,15 @@
 
 // @lc code=start
 function lengthOfLastWord(s: string): number {
-  let last = s.length - 1;
+  let last = s.length - 1
   while (last >= 0 && s.charAt(last) === ' ') {
-    last--;
+    last -= 1
   }
-  let len = 0;
+  let len = 0
   while (last >= 0 && s.charAt(last) !== ' ') {
-    len++;
-    last--;
+    len += 1
+    last -= 1
   }
-  return len;
+  return len
 }
 // @lc code=end
