@@ -7,17 +7,17 @@
 // @lc code=start
 
 function deleteDuplicates(head: ListNode | null): ListNode | null {
-    if (head === null) {
-        return null
+  if (head === null) {
+    return null;
+  }
+  let curNode = head;
+  while (curNode.next !== null) {
+    if (curNode.val === curNode.next.val) {
+      curNode.next = curNode.next.next;
+    } else {
+      curNode = curNode.next;
     }
-    let curNode = head
-    while (curNode.next !== null) {
-        if (curNode.val === curNode.next.val) {
-            curNode.next = curNode.next.next
-        } else {
-            curNode = curNode.next
-        }
-    }
-    return head
+  }
+  return head;
 }
 // @lc code=end

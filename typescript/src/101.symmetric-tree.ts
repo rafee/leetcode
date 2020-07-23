@@ -20,28 +20,28 @@
  */
 
 function isSymmetric(root: TreeNode | null): boolean {
-    if (root === null) {
-        return true
-    }
-    return helpIsSymmetricRecursive({ left: root.left, right: root.right })
+  if (root === null) {
+    return true;
+  }
+  return helpIsSymmetricRecursive({ left: root.left, right: root.right });
 }
 
 function helpIsSymmetricRecursive({
-    left,
-    right,
+  left,
+  right,
 }: {
-    left: TreeNode | null
-    right: TreeNode | null
+  left: TreeNode | null
+  right: TreeNode | null
 }): boolean {
-    if (!left || !right) {
-        return left == right
-    }
-    if (left.val !== right.val) {
-        return false
-    }
-    return (
-        helpIsSymmetricRecursive({ left: left.left, right: right.right }) &&
-        helpIsSymmetricRecursive({ left: left.right, right: right.left })
-    )
+  if (!left || !right) {
+    return left == right;
+  }
+  if (left.val !== right.val) {
+    return false;
+  }
+  return (
+    helpIsSymmetricRecursive({ left: left.left, right: right.right })
+        && helpIsSymmetricRecursive({ left: left.right, right: right.left })
+  );
 }
 // @lc code=end
