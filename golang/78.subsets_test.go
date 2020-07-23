@@ -39,8 +39,9 @@
 package golang
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_subsets(t *testing.T) {
@@ -79,9 +80,8 @@ func Test_subsets(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := subsets(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("subsets() = %v, want %v", got, tt.want)
-			}
+			got := subsets(tt.args.nums)
+			assert.ElementsMatch(t,got,tt.want,"They don't match")
 		})
 	}
 }
