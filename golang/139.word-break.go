@@ -57,29 +57,24 @@ package golang
 
 // @lc code=start
 func wordBreak(s string, wordDict []string) bool {
-	return wordForm(s, "", wordDict)
-}
+	isAvailable := make([]bool, len(s)+1)
+	isAvailable[0] = true
+	for i := 0; i < len(s); i++ {
+		if !isAvailable[i] {
+			continue
+		}
 
-func wordForm(s string, input string, wordDict []string) bool {
-	if len(input) == len(s) {
-		return true
-	}
-	for _, word := range wordDict {
-		curWord := input + word
-		res := chkStr(s, curWord)
-		if res {
-			return res
+		for _, word := range wordDict {
+			if i+len(word) > len(s) {
+				continue
+			}
+
+			if s[i:i+len(word)] == word {
+				isAvailable[i+len(word)] = true
+			}
 		}
 	}
-	return false
-}
-
-func chkStr(s, t string) bool {
-	lenS, lenT := len(s), len(t)
-	if lenS >= lenT {
-		return s[:lenT] == t
-	}
-	return false
+	return isAvailable[len(s)]
 }
 
 // @lc code=end
