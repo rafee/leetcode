@@ -41,21 +41,13 @@ import "sort"
 
 // @lc code=start
 func groupAnagrams(strs []string) [][]string {
-	// using string as key
 	strMap := make(map[string][]string)
 	// keys := make([]string, 0)
-
 	for _, str := range strs {
-		// Using sorted string as key
 		key := sortString(str)
-
-		// Using number as key
-		// Bug: Can't handle character repeat
-		// If array is used, memory usage increased
-		// key := getKey(str)
-		_, found := strMap[key]
+		strSlice, found := strMap[key]
 		if found {
-			strMap[key] = append(strMap[key], str)
+			strMap[key] = append(strSlice, str)
 		} else {
 			// keys = append(keys, key)
 			strMap[key] = []string{str}
@@ -81,17 +73,6 @@ func sortString(s string) string {
 	b := byteSlice(s)
 	sort.Sort(b)
 	return string(b)
-}
-
-func getKey(s string) int {
-	lenS := len(s)
-	key := 0
-
-	for i := 0; i < lenS; i++ {
-		key = key | (1 << (s[i] - 'a'))
-	}
-
-	return key
 }
 
 // @lc code=end

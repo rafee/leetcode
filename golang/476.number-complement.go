@@ -62,9 +62,11 @@ import (
 
 // @lc code=start
 func findComplement(num int) int {
+	comp := (^num)
 	n := math.MaxInt64
 	n >>= (bits.LeadingZeros(uint(num)))
-	return ^num & ^n
+	comp &= n
+	return comp
 }
 
 // @lc code=end

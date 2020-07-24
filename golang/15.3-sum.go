@@ -41,36 +41,33 @@ import "sort"
 // @lc code=start
 
 func threeSum(nums []int) [][]int {
-	res := make([][]int, 0)
-	if len(nums) < 3 {
-		return res
-	}
-
+	var results [][]int
 	sort.Ints(nums)
 	for i := 0; i < len(nums)-2; i++ {
 		if i > 0 && nums[i] == nums[i-1] {
-			continue
+			continue //To prevent the repeat
 		}
-		for j, k := i+1, len(nums)-1; j < k; {
-			sum := nums[i] + nums[j] + nums[k]
-			if sum == 0 {
-				res = append(res, []int{nums[i], nums[j], nums[k]})
-				j++
-				k--
-				for j < k && nums[j] == nums[j-1] {
-					j++
+		target, left, right := -nums[i], i+1, len(nums)-1
+		for left < right {
+			sum := nums[left] + nums[right]
+			if sum == target {
+				results = append(results, []int{nums[i], nums[left], nums[right]})
+				left++
+				right--
+				for left < right && nums[left] == nums[left-1] {
+					left++
 				}
-				for j < k && nums[k] == nums[k+1] {
-					k--
+				for left < right && nums[right] == nums[right+1] {
+					right--
 				}
-			} else if sum < 0 {
-				k--
-			} else {
-				j++
+			} else if sum > target {
+				right--
+			} else if sum < target {
+				left++
 			}
 		}
 	}
-	return res
+	return results
 }
 
 // @lc code=end

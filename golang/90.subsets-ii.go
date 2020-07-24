@@ -43,43 +43,27 @@ import (
 
 // @lc code=start
 func subsetsWithDup(nums []int) [][]int {
+	res := [][]int{{}}
+	var cur []int
+
 	sort.Ints(nums)
-	return genSubsets(nums)
+	doSubsetsWithDup(nums, cur, &res)
+	return res
 }
 
-func genSubsets(nums []int) [][]int {
-	numLen := len(nums)
-	if numLen == 0 {
-		return [][]int{{}}
-	}
+func doSubsetsWithDup(nums []int, cur []int, res *[][]int) {
+	for i := 0; i < len(nums); i++ {
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		cur = append(cur, nums[i])
+		newRes := make([]int, len(cur))
+		copy(newRes, cur)
+		*res = append(*res, newRes)
 
-	dups, nums := genDup(nums)
-	solution := [][]int{}
-	res := genSubsets(nums)
-	solution = append(solution, res...)
-	for _, dup := range dups {
-		for _, set := range res {
-			tmp := append(dup, set...)
-			solution = append(solution, tmp)
-		}
+		doSubsetsWithDup(nums[i+1:], cur, res)
+		cur = cur[:len(cur)-1]
 	}
-	return solution
-}
-
-func genDup(nums []int) ([][]int, []int) {
-	dups := [][]int{{nums[0]}}
-	numLen := len(nums)
-	for i := 1; i < numLen; i++ {
-		if nums[i] != nums[0] {
-			return dups, nums[i:]
-		}
-		tmp := []int{nums[0]}
-		for j := 0; j < i; j++ {
-			tmp = append(tmp, nums[0])
-		}
-		dups = append(dups, tmp)
-	}
-	return dups, []int{}
 }
 
 // @lc code=end

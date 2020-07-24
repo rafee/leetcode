@@ -28,7 +28,7 @@ func Test_frequencySort(t *testing.T) {
 		{
 			name: "Test 2",
 			args: args{"tree"},
-			want: "eert",
+			want: "eetr",
 		},
 	}
 	for _, tt := range tests {

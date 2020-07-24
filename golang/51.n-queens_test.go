@@ -50,6 +50,8 @@ package golang
 import (
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_solveNQueens(t *testing.T) {
@@ -71,7 +73,7 @@ func Test_solveNQueens(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := solveNQueens(tt.args.n); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("solveNQueens() = %v, want %v", got, tt.want)
+				assert.ElementsMatch(t, got, tt.want)
 			}
 		})
 	}
