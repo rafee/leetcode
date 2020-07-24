@@ -69,7 +69,9 @@ func solveNQueensStr(board [][]byte, n, row int, solution []string) [][]string {
 	for col := 0; col < n; col++ {
 		if isSafeStr(board, n, row, col) {
 			sol := placeQueenStr(board, n, row, col)
-			tmp := append(solution, sol)
+			tmp := make([]string, len(solution)+1)
+			copy(tmp, solution)
+			tmp[len(solution)] = sol
 			if row != (n - 1) {
 				res := solveNQueensStr(board, n, row+1, tmp)
 				result = append(result, res...)
