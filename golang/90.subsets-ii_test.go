@@ -72,3 +72,22 @@ func Test_subsetsWithDup(t *testing.T) {
 		})
 	}
 }
+
+func Test_doSubsetsWithDup(t *testing.T) {
+	type args struct {
+		nums []int
+		cur  []int
+		res  *[][]int
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			doSubsetsWithDup(tt.args.nums, tt.args.cur, tt.args.res)
+		})
+	}
+}

@@ -49,11 +49,11 @@ package golang
 
 // @lc code=start
 func solveNQueens(n int) [][]string {
-	board := makeByteBoard(n)
+	board := initBoard(n)
 	return solveNQueensStr(board, n, 0, []string{})
 }
 
-func makeByteBoard(n int) [][]byte {
+func initBoard(n int) [][]byte {
 	board := make([][]byte, n)
 	for i := 0; i < n; i++ {
 		board[i] = make([]byte, n)

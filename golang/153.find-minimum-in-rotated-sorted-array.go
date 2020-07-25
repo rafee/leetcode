@@ -41,7 +41,7 @@
 package golang
 
 // @lc code=start
-func findMin(nums []int) int {
+func findMinI(nums []int) int {
 	start, end := 0, len(nums)-1
 	for start < end {
 		mid := (start + end) / 2
