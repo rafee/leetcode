@@ -69,35 +69,37 @@ package golang
  * }
  */
 func isSameTree(p *TreeNode, q *TreeNode) bool {
-	// Iterative implementation
-	// if p.Val == q.Val {
-	// 	if isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right) {
-	// 		return true
-	// 	}
-	// }
-	// return false
-
-	pQ := []*TreeNode{p}
-	qQ := []*TreeNode{q}
-
-	for {
-		// Pop operation
-		p, pQ = pop(pQ)
-		q, qQ = pop(qQ)
-
-		if p == nil && q == nil {
-			if len(pQ) == 0 {
-				return true
-			}
-			continue
-		} else if p == nil || q == nil {
-			return false
-		} else if p.Val != q.Val {
-			return false
+	if p == nil || q == nil {
+		return p == q
+	} else if p.Val == q.Val {
+		if isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right) {
+			return true
 		}
-		pQ = append(pQ, p.Left, p.Right)
-		qQ = append(qQ, q.Left, q.Right)
 	}
+	return false
+
+	// Iterative implementation
+	// pQ := []*TreeNode{p}
+	// qQ := []*TreeNode{q}
+
+	// for {
+	// 	// Pop operation
+	// 	p, pQ = pop(pQ)
+	// 	q, qQ = pop(qQ)
+
+	// 	if p == nil && q == nil {
+	// 		if len(pQ) == 0 {
+	// 			return true
+	// 		}
+	// 		continue
+	// 	} else if p == nil || q == nil {
+	// 		return false
+	// 	} else if p.Val != q.Val {
+	// 		return false
+	// 	}
+	// 	pQ = append(pQ, p.Left, p.Right)
+	// 	qQ = append(qQ, q.Left, q.Right)
+	// }
 }
 
 func pop(queue []*TreeNode) (*TreeNode, []*TreeNode) {

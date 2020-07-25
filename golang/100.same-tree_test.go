@@ -60,8 +60,9 @@
 package golang
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_isSameTree(t *testing.T) {
@@ -74,13 +75,16 @@ func Test_isSameTree(t *testing.T) {
 		args args
 		want bool
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Test 1",
+			args: args{buildTree([]int{3, 9, 20, 15, 7}, []int{9, 3, 15, 20,
+				7}), buildTree([]int{3, 9, 20, 15, 7}, []int{9, 3, 15, 20, 7})},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isSameTree(tt.args.p, tt.args.q); got != tt.want {
-				t.Errorf("isSameTree() = %v, want %v", got, tt.want)
-			}
+			assert.Equal(t, tt.want, isSameTree(tt.args.p, tt.args.q))
 		})
 	}
 }
@@ -100,12 +104,8 @@ func Test_pop(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got, got1 := pop(tt.args.queue)
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("pop() got = %v, want %v", got, tt.want)
-			}
-			if !reflect.DeepEqual(got1, tt.want1) {
-				t.Errorf("pop() got1 = %v, want %v", got1, tt.want1)
-			}
+			assert.Equal(t, tt.want, got)
+			assert.Equal(t, tt.want1, got1)
 		})
 	}
 }
