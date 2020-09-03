@@ -24,10 +24,10 @@ func isPalindromeString(s string) bool {
 		}
 		if s[left] != s[right] {
 			return false
-		} else {
-			left++
-			right--
 		}
+		left++
+		right--
+
 	}
 	return true
 }

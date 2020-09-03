@@ -8,19 +8,19 @@ package golang
 
 // @lc code=start
 
-func inpost_buildTree(inorder []int, in_begin int, in_end int, postorder []int, root_pos int) *TreeNode {
-	if root_pos < 0 || in_begin > in_end {
+func inpostBuildTree(inorder []int, inBegin int, inEnd int, postOrder []int, rootPos int) *TreeNode {
+	if rootPos < 0 || inBegin > inEnd {
 		return nil
 	}
 	//find root's position in inorder
-	var i int = in_begin
-	for i < in_end && inorder[i] != postorder[root_pos] {
+	var i int = inBegin
+	for i < inEnd && inorder[i] != postOrder[rootPos] {
 		i++
 	}
 	var node TreeNode
-	node.Val = postorder[root_pos]
-	node.Left = inpost_buildTree(inorder, in_begin, i-1, postorder, root_pos-in_end+i-1)
-	node.Right = inpost_buildTree(inorder, i+1, in_end, postorder, root_pos-1)
+	node.Val = postOrder[rootPos]
+	node.Left = inpostBuildTree(inorder, inBegin, i-1, postOrder, rootPos-inEnd+i-1)
+	node.Right = inpostBuildTree(inorder, i+1, inEnd, postOrder, rootPos-1)
 	return &node
 }
 
@@ -30,7 +30,7 @@ func buildTree(inorder []int, postorder []int) *TreeNode {
 	if lin == 0 || lpost == 0 || lin != lpost {
 		return nil
 	}
-	return inpost_buildTree(inorder, 0, lin-1, postorder, lpost-1)
+	return inpostBuildTree(inorder, 0, lin-1, postorder, lpost-1)
 }
 
 // @lc code=end

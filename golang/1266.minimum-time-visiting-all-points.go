@@ -10,9 +10,9 @@ package golang
 func minTimeToVisitAllPoints(points [][]int) int {
 	dist := 0
 	for i := 1; i < len(points); i++ {
-		x_diff := diff(points[i][0], points[i-1][0])
-		y_diff := diff(points[i][1], points[i-1][1])
-		dist += max(x_diff, y_diff)
+		xDiff := diff(points[i][0], points[i-1][0])
+		yDiff := diff(points[i][1], points[i-1][1])
+		dist += max(xDiff, yDiff)
 	}
 	return dist
 }

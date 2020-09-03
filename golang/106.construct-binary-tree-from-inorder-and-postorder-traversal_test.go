@@ -11,13 +11,13 @@ import (
 	"testing"
 )
 
-func Test_inpost_buildTree(t *testing.T) {
+func Test_inpostBuildTree(t *testing.T) {
 	type args struct {
 		inorder   []int
-		in_begin  int
-		in_end    int
-		postorder []int
-		root_pos  int
+		inBegin   int
+		inEnd     int
+		postOrder []int
+		rootPos   int
 	}
 	tests := []struct {
 		name string
@@ -28,7 +28,7 @@ func Test_inpost_buildTree(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := inpost_buildTree(tt.args.inorder, tt.args.in_begin, tt.args.in_end, tt.args.postorder, tt.args.root_pos); !reflect.DeepEqual(got, tt.want) {
+			if got := inpostBuildTree(tt.args.inorder, tt.args.inBegin, tt.args.inEnd, tt.args.postOrder, tt.args.rootPos); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("inpost_buildTree() = %v, want %v", got, tt.want)
 			}
 		})

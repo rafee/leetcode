@@ -7,14 +7,8 @@
 package golang
 
 // @lc code=start
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
+
+// BSTIterator iterates over the binary search Trees
 type BSTIterator struct {
 	stack []*TreeNode
 }
@@ -31,6 +25,8 @@ func bstConstructor(root *TreeNode) BSTIterator {
 }
 
 /** @return the next smallest number */
+
+// Next returns the next smallest number
 func (this *BSTIterator) Next() int {
 	top := this.stack[len(this.stack)-1]
 	this.stack = this.stack[:len(this.stack)-1]
@@ -43,6 +39,8 @@ func (this *BSTIterator) Next() int {
 }
 
 /** @return whether we have a next smallest number */
+
+//HasNext return whether the next iterator is present or not
 func (this *BSTIterator) HasNext() bool {
 	return len(this.stack) != 0
 }

@@ -7,6 +7,8 @@
 package golang
 
 // @lc code=start
+
+// Trie implements
 type Trie struct {
 	children map[byte]*Trie
 	isWord   bool
