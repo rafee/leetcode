@@ -7,14 +7,12 @@
 package golang
 
 import (
-	"fmt"
 	"sort"
 )
 
 // @lc code=start
 func removeCoveredIntervals(intervals [][]int) int {
 	sort.Sort(intervalsType(intervals))
-	fmt.Println(intervals)
 	count := 0
 
 	high := 0
