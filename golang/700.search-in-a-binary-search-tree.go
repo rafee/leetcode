@@ -59,17 +59,11 @@ package golang
  * }
  */
 func searchBST(root *TreeNode, val int) *TreeNode {
+	return searchBSTIterative(root, val)
+}
 
-	// Recursive Solution
-	// if root == nil || root.Val == val {
-	// 	return root
-	// } else if root.Val > val {
-	// 	return searchBST(root.Left, val)
-	// } else {
-	// 	return searchBST(root.Right, val)
-	// }
-
-	// iterative solution
+// iterative solution
+func searchBSTIterative(root *TreeNode, val int) *TreeNode {
 	for root != nil && root.Val != val {
 		if root.Val > val {
 			root = root.Left
@@ -78,6 +72,17 @@ func searchBST(root *TreeNode, val int) *TreeNode {
 		}
 	}
 	return root
+}
+
+// Recursive Solution
+func searchBSTRecursive(root *TreeNode, val int) *TreeNode {
+	if root == nil || root.Val == val {
+		return root
+	} else if root.Val > val {
+		return searchBSTRecursive(root.Left, val)
+	} else {
+		return searchBSTRecursive(root.Right, val)
+	}
 }
 
 // @lc code=end
