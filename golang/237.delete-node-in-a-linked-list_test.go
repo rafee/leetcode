@@ -8,7 +8,7 @@ package golang
 
 import "testing"
 
-func Test_deleteNode(t *testing.T) {
+func Test_deleteListNode(t *testing.T) {
 	type args struct {
 		node *ListNode
 	}
@@ -20,7 +20,7 @@ func Test_deleteNode(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			deleteNode(tt.args.node)
+			deleteListNode(tt.args.node)
 		})
 	}
 }

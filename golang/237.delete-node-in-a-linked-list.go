@@ -14,7 +14,7 @@ package golang
  *     Next *ListNode
  * }
  */
-func deleteNode(node *ListNode) {
+func deleteListNode(node *ListNode) {
 	if node == nil {
 		return
 	}
