@@ -44,7 +44,7 @@
 package golang
 
 // @lc code=start
-func searchMatrix(matrix [][]int, target int) bool {
+func searchMatrixII(matrix [][]int, target int) bool {
 	m := len(matrix)
 	if m == 0 {
 		return false
