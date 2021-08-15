@@ -1,9 +1,9 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/go/.devcontainer/base.Dockerfile
 
 # [Choice] Go version: 1, 1.16, 1.15
-ARG VARIANT="1.16"
-ARG OS="buster"
-FROM buildpack-deps:${OS}-curl
+ARG VARIANT="1"
+ARG OS=""
+# FROM buildpack-deps:${OS}-curl
 FROM golang:${VARIANT}-${OS}
 
 # Use the [Option] comment to specify true/false arguments that should appear in VS Code UX
@@ -18,7 +18,7 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+RUN apt-get update && apt-get dist-upgrade -y && export DEBIAN_FRONTEND=noninteractive \
     && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true"\
     #
     # ****************************************************************************
@@ -33,7 +33,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 # [Choice] Node.js version: none, lts, 16, 14, 12, 10
-ARG NODE_VERSION="lts"
+ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" = "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # [Optional] Uncomment this section to install additional OS packages.
