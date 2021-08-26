@@ -39,12 +39,14 @@ RUN apt-get update && apt-get upgrade -y && export DEBIAN_FRONTEND=noninteractiv
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 # [Choice] Node.js version: none, lts, 16, 14, 12, 10
+USER ${USERNAME}
 ARG NODE_VERSION="none"
-# ENV NVM_DIR /usr/local/nvm
+RUN mkdir -p /home/${USERNAME}/.local/nvm
+ENV NVM_DIR /home/${USERNAME}/.local/nvm
 # # Install nvm with node and npm
-# RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | bash \
-#     && . $NVM_DIR/nvm.sh
-# RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash \
+    && . $NVM_DIR/nvm.sh && nvm install --lts
+# RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . ${NVM_DIR}/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

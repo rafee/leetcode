@@ -8,6 +8,7 @@
 			// Update the VARIANT arg to pick a version of Go: 1, 1.16, 1.15
 			"VARIANT": "1.17",
 			// Options
+			// Node_version is currently hardcoded. Need to change in Dockerfile
 			"NODE_VERSION": "lts",
 			"OS": "bullseye"
 		}
