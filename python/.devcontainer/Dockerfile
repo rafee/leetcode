@@ -1,21 +1,53 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/python-3/.devcontainer/base.Dockerfile
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/go/.devcontainer/base.Dockerfile
 
-# [Choice] Python version: 3, 3.9, 3.8, 3.7, 3.6
-ARG VARIANT="3.9"
-FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
+# [Choice] Go version: 1, 1.16, 1.15
+ARG VARIANT="1"
+ARG OS=""
+# FROM buildpack-deps:${OS}-curl
+FROM python:${VARIANT}-${OS}
 
-# [Choice] Node.js version: none, lts, 16, 14, 12, 10
-ARG NODE_VERSION="none"
-RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
+# Use the [Option] comment to specify true/false arguments that should appear in VS Code UX
+#
+# [Option] Install zsh
+ARG INSTALL_ZSH="true"
+# [Option] Upgrade OS packages to their latest versions
+ARG UPGRADE_PACKAGES="false"
 
-# [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
-# COPY requirements.txt /tmp/pip-tmp/
-# RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-#    && rm -rf /tmp/pip-tmp
+# Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
+RUN apt-get update && apt-get upgrade -y && export DEBIAN_FRONTEND=noninteractive \
+    && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true"\
+    #
+    # ****************************************************************************
+    # * TODO: Add any additional OS packages you want included in the definition *
+    # * here. We want to do this before cleanup to keep the "layer" small.       *
+    # ****************************************************************************
+    # && apt-get -y install --no-install-recommends apt-transport-https \
+    # build-essential \
+    # ca-certificates \
+    # curl \
+    # git \
+    # libssl-dev \
+    # wget \
+    #
+    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+# [Choice] Node.js version: none, lts, 16, 14, 12, 10
+USER ${USERNAME}
+ARG NODE_VERSION="none"
+RUN mkdir -p /home/${USERNAME}/.local/nvm
+ENV NVM_DIR /home/${USERNAME}/.local/nvm
+# # Install nvm with node and npm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash \
+    && . $NVM_DIR/nvm.sh && nvm install --lts
+# RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . ${NVM_DIR}/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-# [Optional] Uncomment this line to install global node packages.
-# RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
