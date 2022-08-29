@@ -56,7 +56,7 @@ func searchRange(nums []int, target int) []int {
 	}
 
 	rightIndex := 0
-	for start, end := 0, len(nums)-1; start <= end; {
+	for start, end := index, len(nums)-1; start <= end; {
 		mid := start + (end-start)/2
 		if nums[mid] == target && (mid == len(nums)-1 || nums[mid+1] > target) {
 			rightIndex = mid
