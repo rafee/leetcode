@@ -74,3 +74,45 @@ func Test_searchBST(t *testing.T) {
 		})
 	}
 }
+
+func Test_searchBSTIterative(t *testing.T) {
+	type args struct {
+		root *TreeNode
+		val  int
+	}
+	tests := []struct {
+		name string
+		args args
+		want *TreeNode
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := searchBSTIterative(tt.args.root, tt.args.val); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("searchBSTIterative() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func Test_searchBSTRecursive(t *testing.T) {
+	type args struct {
+		root *TreeNode
+		val  int
+	}
+	tests := []struct {
+		name string
+		args args
+		want *TreeNode
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := searchBSTRecursive(tt.args.root, tt.args.val); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("searchBSTRecursive() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
